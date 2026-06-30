@@ -1,0 +1,566 @@
+erp_ref,date,amount,memo
+ERP00001,2025-01-24,33666.84,Customer payment - product
+ERP00002,2025-01-29,51970.65,Customer payment - product
+ERP00003,2025-01-08,33095.88,Customer payment - product
+ERP00004,2025-01-14,52767.9,Customer payment - product
+ERP00005,2025-01-06,54628.89,Customer payment - product
+ERP00006,2025-01-02,38626.36,Customer payment - product
+ERP00007,2025-01-27,47934.82,Customer payment - product
+ERP00008,2025-01-09,33332.42,Customer payment - product
+ERP00009,2025-01-23,51759.42,Customer payment - product
+ERP00010,2025-01-07,38730.61,Customer payment - product
+ERP00011,2025-01-21,58704.12,Customer payment - product
+ERP00012,2025-01-21,33612.39,Customer payment - product
+ERP00013,2025-01-10,50813.64,Customer payment - product
+ERP00014,2025-01-17,57311.55,Customer payment - product
+ERP00015,2025-01-30,47524.9,Customer payment - product
+ERP00016,2025-01-29,33684.22,Customer payment - product
+ERP00017,2025-01-31,51421.93,Customer payment - product
+ERP00018,2025-01-17,31936.13,Customer payment - service
+ERP00019,2025-01-01,21881.02,Customer payment - service
+ERP00020,2025-01-03,26079.44,Customer payment - service
+ERP00021,2025-01-03,43267.0,Customer payment - service
+ERP00022,2025-01-24,33207.94,Customer payment - service
+ERP00023,2025-01-07,41865.52,Customer payment - service
+ERP00024,2025-01-15,-10505.71,Customer refund
+ERP00025,2025-01-28,-13970.93,Customer refund
+ERP00026,2025-01-14,-11787.75,Customer refund
+ERP00027,2025-01-03,-15634.78,Customer refund
+ERP00028,2025-01-27,-13105.65,Customer refund
+ERP00029,2025-01-21,-55707.93,Supplier payment - inventory
+ERP00030,2025-01-20,-50488.83,Supplier payment - inventory
+ERP00031,2025-01-20,-61781.71,Supplier payment - inventory
+ERP00032,2025-01-23,-151631.68,Payroll
+ERP00033,2025-01-31,-129981.79,Payroll
+ERP00034,2025-01-14,-154843.4,Payroll
+ERP00035,2025-01-28,-37783.96,Marketing & Advertising
+ERP00036,2025-01-29,-27555.09,Marketing & Advertising
+ERP00037,2025-01-06,-39000.25,Marketing & Advertising
+ERP00038,2025-01-14,-35947.59,Marketing & Advertising
+ERP00039,2025-01-28,-29956.3,Rent & Facilities
+ERP00040,2025-01-27,-26507.75,Rent & Facilities
+ERP00041,2025-01-09,-37074.01,Software & IT
+ERP00042,2025-01-27,-4875.84,Travel & Entertainment
+ERP00043,2025-01-09,-6101.07,Travel & Entertainment
+ERP00044,2025-01-24,-5381.2,Travel & Entertainment
+ERP00045,2025-01-07,-29173.41,Professional Fees
+ERP00046,2025-01-22,-6277.56,Other Operating Expense
+ERP00047,2025-01-10,-7369.19,Other Operating Expense
+ERP00048,2025-02-10,56204.63,Customer payment - product
+ERP00049,2025-02-06,67813.92,Customer payment - product
+ERP00050,2025-02-07,52044.07,Customer payment - product
+ERP00051,2025-02-26,48236.2,Customer payment - product
+ERP00052,2025-02-03,65362.26,Customer payment - product
+ERP00053,2025-02-20,40243.4,Customer payment - product
+ERP00054,2025-02-13,47422.62,Customer payment - product
+ERP00055,2025-02-28,76907.43,Customer payment - product
+ERP00056,2025-02-18,58829.09,Customer payment - product
+ERP00057,2025-02-06,58042.11,Customer payment - product
+ERP00058,2025-02-10,57787.01,Customer payment - product
+ERP00059,2025-02-13,45055.25,Customer payment - product
+ERP00060,2025-02-19,77421.71,Customer payment - product
+ERP00061,2025-02-14,72989.0,Customer payment - product
+ERP00062,2025-02-13,61767.07,Customer payment - product
+ERP00063,2025-02-06,75817.58,Customer payment - product
+ERP00064,2025-02-03,28865.42,Customer payment - service
+ERP00065,2025-02-12,23100.07,Customer payment - service
+ERP00066,2025-02-07,22759.43,Customer payment - service
+ERP00067,2025-02-04,35238.56,Customer payment - service
+ERP00068,2025-02-06,43686.67,Customer payment - service
+ERP00069,2025-02-04,49383.96,Customer payment - service
+ERP00070,2025-02-13,41107.6,Customer payment - service
+ERP00071,2025-02-25,-7335.67,Customer refund
+ERP00072,2025-02-12,-15632.12,Customer refund
+ERP00073,2025-02-21,-6934.16,Customer refund
+ERP00074,2025-02-04,-16115.91,Customer refund
+ERP00075,2025-02-10,-77799.96,Supplier payment - inventory
+ERP00076,2025-02-18,-67570.98,Supplier payment - inventory
+ERP00077,2025-02-11,-66746.28,Supplier payment - inventory
+ERP00078,2025-02-03,-58914.68,Supplier payment - inventory
+ERP00079,2025-02-05,-56132.68,Supplier payment - inventory
+ERP00080,2025-02-26,-88194.4,Payroll
+ERP00081,2025-02-10,-83531.0,Payroll
+ERP00082,2025-02-20,-87416.51,Payroll
+ERP00083,2025-02-03,-80035.56,Payroll
+ERP00084,2025-02-06,-87073.12,Payroll
+ERP00085,2025-02-10,-24182.0,Marketing & Advertising
+ERP00086,2025-02-26,-32722.8,Marketing & Advertising
+ERP00087,2025-02-21,-27601.59,Marketing & Advertising
+ERP00088,2025-02-06,-21214.03,Marketing & Advertising
+ERP00089,2025-02-10,-26577.42,Marketing & Advertising
+ERP00090,2025-02-20,-27089.21,Rent & Facilities
+ERP00091,2025-02-03,-28184.51,Rent & Facilities
+ERP00092,2025-02-25,-19347.69,Software & IT
+ERP00093,2025-02-06,-18736.57,Software & IT
+ERP00094,2025-02-14,-16252.59,Travel & Entertainment
+ERP00095,2025-02-10,-28774.59,Professional Fees
+ERP00096,2025-02-28,-5030.59,Other Operating Expense
+ERP00097,2025-02-12,-4316.76,Other Operating Expense
+ERP00098,2025-02-07,-4957.86,Other Operating Expense
+ERP00099,2025-03-18,72801.79,Customer payment - product
+ERP00100,2025-03-14,70736.59,Customer payment - product
+ERP00101,2025-03-11,68102.51,Customer payment - product
+ERP00102,2025-03-24,47842.88,Customer payment - product
+ERP00103,2025-03-31,93961.06,Customer payment - product
+ERP00104,2025-03-28,88492.95,Customer payment - product
+ERP00105,2025-03-14,81246.46,Customer payment - product
+ERP00106,2025-03-25,93839.0,Customer payment - product
+ERP00107,2025-03-26,47958.22,Customer payment - product
+ERP00108,2025-03-14,57711.96,Customer payment - product
+ERP00109,2025-03-21,57120.99,Customer payment - product
+ERP00110,2025-03-18,90043.52,Customer payment - product
+ERP00111,2025-03-31,60416.38,Customer payment - product
+ERP00112,2025-03-28,94874.17,Customer payment - product
+ERP00113,2025-03-10,73981.5,Customer payment - product
+ERP00114,2025-03-24,60579.31,Customer payment - service
+ERP00115,2025-03-12,49505.73,Customer payment - service
+ERP00116,2025-03-24,52084.85,Customer payment - service
+ERP00117,2025-03-26,28798.14,Customer payment - service
+ERP00118,2025-03-10,-9110.18,Customer refund
+ERP00119,2025-03-18,-9758.97,Customer refund
+ERP00120,2025-03-27,-20539.17,Customer refund
+ERP00121,2025-03-31,-20134.09,Customer refund
+ERP00122,2025-03-05,-87121.85,Supplier payment - inventory
+ERP00123,2025-03-12,-75657.51,Supplier payment - inventory
+ERP00124,2025-03-12,-94097.28,Supplier payment - inventory
+ERP00125,2025-03-26,-70504.51,Supplier payment - inventory
+ERP00126,2025-03-03,-77196.85,Payroll
+ERP00127,2025-03-20,-78284.59,Payroll
+ERP00128,2025-03-20,-83541.87,Payroll
+ERP00129,2025-03-14,-86114.57,Payroll
+ERP00130,2025-03-25,-89114.92,Payroll
+ERP00131,2025-03-14,-40836.36,Marketing & Advertising
+ERP00132,2025-03-11,-38126.37,Marketing & Advertising
+ERP00133,2025-03-05,-32050.55,Marketing & Advertising
+ERP00134,2025-03-04,-27244.23,Marketing & Advertising
+ERP00135,2025-03-18,-35678.55,Marketing & Advertising
+ERP00136,2025-03-31,-26533.75,Rent & Facilities
+ERP00137,2025-03-04,-26262.16,Rent & Facilities
+ERP00138,2025-03-28,-12612.52,Software & IT
+ERP00139,2025-03-25,-12264.05,Software & IT
+ERP00140,2025-03-25,-13715.94,Software & IT
+ERP00141,2025-03-06,-8114.29,Travel & Entertainment
+ERP00142,2025-03-28,-5246.27,Travel & Entertainment
+ERP00143,2025-03-03,-7806.04,Travel & Entertainment
+ERP00144,2025-03-12,-14427.23,Professional Fees
+ERP00145,2025-03-05,-15346.41,Professional Fees
+ERP00146,2025-03-10,-6882.25,Other Operating Expense
+ERP00147,2025-03-13,-6678.14,Other Operating Expense
+ERP00148,2025-04-25,121334.73,Customer payment - product
+ERP00149,2025-04-14,92330.7,Customer payment - product
+ERP00150,2025-04-22,92516.99,Customer payment - product
+ERP00151,2025-04-15,88370.22,Customer payment - product
+ERP00152,2025-04-14,106065.06,Customer payment - product
+ERP00153,2025-04-15,112010.61,Customer payment - product
+ERP00154,2025-04-11,82108.48,Customer payment - product
+ERP00155,2025-04-08,101917.43,Customer payment - product
+ERP00156,2025-04-11,101758.72,Customer payment - product
+ERP00157,2025-04-09,101007.19,Customer payment - product
+ERP00158,2025-04-28,101867.15,Customer payment - product
+ERP00159,2025-04-11,102331.48,Customer payment - product
+ERP00160,2025-04-29,66826.75,Customer payment - product
+ERP00161,2025-04-15,76166.41,Customer payment - product
+ERP00162,2025-04-21,98838.11,Customer payment - product
+ERP00163,2025-04-24,43682.37,Customer payment - service
+ERP00164,2025-04-30,56294.92,Customer payment - service
+ERP00165,2025-04-23,48236.31,Customer payment - service
+ERP00166,2025-04-11,58861.16,Customer payment - service
+ERP00167,2025-04-17,60000.06,Customer payment - service
+ERP00168,2025-04-07,39294.31,Customer payment - service
+ERP00169,2025-04-03,73919.01,Customer payment - service
+ERP00170,2025-04-29,-20769.49,Customer refund
+ERP00171,2025-04-23,-11694.77,Customer refund
+ERP00172,2025-04-22,-9718.5,Customer refund
+ERP00173,2025-04-21,-94797.83,Supplier payment - inventory
+ERP00174,2025-04-08,-107670.43,Supplier payment - inventory
+ERP00175,2025-04-01,-95824.05,Supplier payment - inventory
+ERP00176,2025-04-24,-229009.47,Payroll
+ERP00177,2025-04-11,-207378.63,Payroll
+ERP00178,2025-04-03,-76279.42,Marketing & Advertising
+ERP00179,2025-04-07,-50945.61,Marketing & Advertising
+ERP00180,2025-04-18,-62641.39,Marketing & Advertising
+ERP00181,2025-04-28,-52176.66,Rent & Facilities
+ERP00182,2025-04-24,-18712.5,Software & IT
+ERP00183,2025-04-16,-18982.69,Software & IT
+ERP00184,2025-04-14,-7762.15,Travel & Entertainment
+ERP00185,2025-04-03,-7345.55,Travel & Entertainment
+ERP00186,2025-04-14,-8480.57,Travel & Entertainment
+ERP00187,2025-04-30,-31633.06,Professional Fees
+ERP00188,2025-04-22,-5003.89,Other Operating Expense
+ERP00189,2025-04-15,-4866.13,Other Operating Expense
+ERP00190,2025-04-02,-4978.6,Other Operating Expense
+ERP00191,2025-05-19,91535.72,Customer payment - product
+ERP00192,2025-05-01,84967.57,Customer payment - product
+ERP00193,2025-05-16,114195.92,Customer payment - product
+ERP00194,2025-05-22,134788.81,Customer payment - product
+ERP00195,2025-05-23,125272.49,Customer payment - product
+ERP00196,2025-05-08,121099.19,Customer payment - product
+ERP00197,2025-05-05,98249.49,Customer payment - product
+ERP00198,2025-05-14,102351.95,Customer payment - product
+ERP00199,2025-05-15,70573.03,Customer payment - product
+ERP00200,2025-05-06,110382.24,Customer payment - product
+ERP00201,2025-05-05,123866.91,Customer payment - product
+ERP00202,2025-05-29,89706.52,Customer payment - product
+ERP00203,2025-05-21,84669.24,Customer payment - product
+ERP00204,2025-05-16,85740.48,Customer payment - product
+ERP00205,2025-05-14,76479.03,Customer payment - product
+ERP00206,2025-05-08,118889.19,Customer payment - product
+ERP00207,2025-05-13,38429.05,Customer payment - service
+ERP00208,2025-05-30,75046.94,Customer payment - service
+ERP00209,2025-05-15,59916.75,Customer payment - service
+ERP00210,2025-05-13,40322.36,Customer payment - service
+ERP00211,2025-05-16,-11144.62,Customer refund
+ERP00212,2025-05-14,-10322.35,Customer refund
+ERP00213,2025-05-12,-25672.09,Customer refund
+ERP00214,2025-05-12,-21568.16,Customer refund
+ERP00215,2025-05-09,-20398.94,Customer refund
+ERP00216,2025-05-22,-105340.64,Supplier payment - inventory
+ERP00217,2025-05-12,-159373.96,Supplier payment - inventory
+ERP00218,2025-05-19,-102024.97,Payroll
+ERP00219,2025-05-26,-115714.14,Payroll
+ERP00220,2025-05-23,-102020.86,Payroll
+ERP00221,2025-05-16,-111524.08,Payroll
+ERP00222,2025-05-23,-68428.8,Marketing & Advertising
+ERP00223,2025-05-08,-63025.06,Marketing & Advertising
+ERP00224,2025-05-08,-48534.52,Marketing & Advertising
+ERP00225,2025-05-22,-62363.2,Marketing & Advertising
+ERP00226,2025-05-29,-28509.09,Rent & Facilities
+ERP00227,2025-05-21,-29189.01,Rent & Facilities
+ERP00228,2025-05-28,-38320.59,Software & IT
+ERP00229,2025-05-13,-34336.11,Travel & Entertainment
+ERP00230,2025-05-19,-26466.72,Professional Fees
+ERP00231,2025-05-21,-14776.56,Other Operating Expense
+ERP00232,2025-06-27,139700.98,Customer payment - product
+ERP00233,2025-06-25,91012.82,Customer payment - product
+ERP00234,2025-06-10,141161.61,Customer payment - product
+ERP00235,2025-06-24,82779.0,Customer payment - product
+ERP00236,2025-06-03,137871.49,Customer payment - product
+ERP00237,2025-06-23,79951.82,Customer payment - product
+ERP00238,2025-06-05,132940.14,Customer payment - product
+ERP00239,2025-06-26,106439.27,Customer payment - product
+ERP00240,2025-06-19,128127.81,Customer payment - product
+ERP00241,2025-06-02,112468.13,Customer payment - product
+ERP00242,2025-06-30,105380.1,Customer payment - product
+ERP00243,2025-06-24,106487.14,Customer payment - product
+ERP00244,2025-06-05,60434.41,Customer payment - service
+ERP00245,2025-06-20,39048.29,Customer payment - service
+ERP00246,2025-06-02,42476.76,Customer payment - service
+ERP00247,2025-06-18,57521.09,Customer payment - service
+ERP00248,2025-06-27,87034.69,Customer payment - service
+ERP00249,2025-06-05,-15567.1,Customer refund
+ERP00250,2025-06-18,-16375.13,Customer refund
+ERP00251,2025-06-16,-19587.11,Customer refund
+ERP00252,2025-06-17,-18614.39,Customer refund
+ERP00253,2025-06-06,-16897.64,Customer refund
+ERP00254,2025-06-11,-153749.44,Supplier payment - inventory
+ERP00255,2025-06-24,-161918.59,Supplier payment - inventory
+ERP00256,2025-06-10,-150431.17,Supplier payment - inventory
+ERP00257,2025-06-16,-159469.01,Supplier payment - inventory
+ERP00258,2025-06-24,-170085.15,Supplier payment - inventory
+ERP00259,2025-06-24,-106518.34,Supplier payment - inventory
+ERP00260,2025-06-17,-216662.16,Payroll
+ERP00261,2025-06-27,-190084.56,Payroll
+ERP00262,2025-06-20,-118426.55,Marketing & Advertising
+ERP00263,2025-06-13,-103388.5,Marketing & Advertising
+ERP00264,2025-06-23,-17203.45,Rent & Facilities
+ERP00265,2025-06-25,-19009.77,Rent & Facilities
+ERP00266,2025-06-16,-17792.88,Rent & Facilities
+ERP00267,2025-06-26,-37998.71,Software & IT
+ERP00268,2025-06-23,-24473.26,Travel & Entertainment
+ERP00269,2025-06-09,-31327.89,Professional Fees
+ERP00270,2025-06-19,-13325.57,Other Operating Expense
+ERP00271,2025-07-24,88673.78,Customer payment - product
+ERP00272,2025-07-16,129803.41,Customer payment - product
+ERP00273,2025-07-23,116659.9,Customer payment - product
+ERP00274,2025-07-11,73162.88,Customer payment - product
+ERP00275,2025-07-09,87057.03,Customer payment - product
+ERP00276,2025-07-17,100371.95,Customer payment - product
+ERP00277,2025-07-11,69027.04,Customer payment - product
+ERP00278,2025-07-18,111713.36,Customer payment - product
+ERP00279,2025-07-10,72119.89,Customer payment - product
+ERP00280,2025-07-10,81384.55,Customer payment - product
+ERP00281,2025-07-07,96238.13,Customer payment - product
+ERP00282,2025-07-28,85185.46,Customer payment - product
+ERP00283,2025-07-10,128562.88,Customer payment - product
+ERP00284,2025-07-10,128191.26,Customer payment - product
+ERP00285,2025-07-30,87401.48,Customer payment - product
+ERP00286,2025-07-15,88210.6,Customer payment - product
+ERP00287,2025-07-28,125135.32,Customer payment - product
+ERP00288,2025-07-08,39599.74,Customer payment - service
+ERP00289,2025-07-21,36601.19,Customer payment - service
+ERP00290,2025-07-04,39441.92,Customer payment - service
+ERP00291,2025-07-23,60272.34,Customer payment - service
+ERP00292,2025-07-22,-18779.73,Customer refund
+ERP00293,2025-07-16,-29205.2,Customer refund
+ERP00294,2025-07-31,-12013.35,Customer refund
+ERP00295,2025-07-07,-18628.99,Customer refund
+ERP00296,2025-07-24,-11653.65,Customer refund
+ERP00297,2025-07-23,-10621.32,Customer refund
+ERP00298,2025-07-16,-123066.9,Supplier payment - inventory
+ERP00299,2025-07-09,-107364.48,Supplier payment - inventory
+ERP00300,2025-07-24,-88929.2,Supplier payment - inventory
+ERP00301,2025-07-28,-81104.51,Payroll
+ERP00302,2025-07-08,-91689.04,Payroll
+ERP00303,2025-07-07,-88740.39,Payroll
+ERP00304,2025-07-09,-82920.83,Payroll
+ERP00305,2025-07-23,-82360.21,Payroll
+ERP00306,2025-07-17,-66214.73,Marketing & Advertising
+ERP00307,2025-07-09,-65306.76,Marketing & Advertising
+ERP00308,2025-07-08,-59707.66,Marketing & Advertising
+ERP00309,2025-07-21,-57574.85,Marketing & Advertising
+ERP00310,2025-07-25,-19629.57,Rent & Facilities
+ERP00311,2025-07-29,-19190.03,Rent & Facilities
+ERP00312,2025-07-28,-18693.94,Rent & Facilities
+ERP00313,2025-07-03,-12235.66,Software & IT
+ERP00314,2025-07-16,-13654.2,Software & IT
+ERP00315,2025-07-28,-12173.44,Software & IT
+ERP00316,2025-07-15,-21114.39,Travel & Entertainment
+ERP00317,2025-07-31,-14843.47,Professional Fees
+ERP00318,2025-07-10,-16375.73,Professional Fees
+ERP00319,2025-07-04,-4208.81,Other Operating Expense
+ERP00320,2025-07-08,-4255.29,Other Operating Expense
+ERP00321,2025-07-04,-4885.74,Other Operating Expense
+ERP00322,2025-08-26,84928.78,Customer payment - product
+ERP00323,2025-08-27,84906.19,Customer payment - product
+ERP00324,2025-08-05,118179.39,Customer payment - product
+ERP00325,2025-08-08,111347.21,Customer payment - product
+ERP00326,2025-08-25,106821.38,Customer payment - product
+ERP00327,2025-08-13,121939.98,Customer payment - product
+ERP00328,2025-08-01,94331.55,Customer payment - product
+ERP00329,2025-08-19,64851.22,Customer payment - product
+ERP00330,2025-08-07,100014.05,Customer payment - product
+ERP00331,2025-08-08,121859.46,Customer payment - product
+ERP00332,2025-08-14,43747.64,Customer payment - service
+ERP00333,2025-08-19,58960.87,Customer payment - service
+ERP00334,2025-08-28,44760.2,Customer payment - service
+ERP00335,2025-08-04,40526.28,Customer payment - service
+ERP00336,2025-08-28,-9282.65,Customer refund
+ERP00337,2025-08-05,-14741.6,Customer refund
+ERP00338,2025-08-11,-15686.74,Customer refund
+ERP00339,2025-08-05,-103146.23,Supplier payment - inventory
+ERP00340,2025-08-11,-120260.06,Supplier payment - inventory
+ERP00341,2025-08-25,-83898.94,Supplier payment - inventory
+ERP00342,2025-08-14,-105147.28,Supplier payment - inventory
+ERP00343,2025-08-15,-104236.79,Supplier payment - inventory
+ERP00344,2025-08-20,-115920.78,Payroll
+ERP00345,2025-08-08,-98426.75,Payroll
+ERP00346,2025-08-27,-95862.93,Payroll
+ERP00347,2025-08-18,-116648.71,Payroll
+ERP00348,2025-08-26,-30276.05,Marketing & Advertising
+ERP00349,2025-08-08,-44044.04,Marketing & Advertising
+ERP00350,2025-08-21,-35385.33,Marketing & Advertising
+ERP00351,2025-08-07,-28762.02,Marketing & Advertising
+ERP00352,2025-08-15,-30665.77,Marketing & Advertising
+ERP00353,2025-08-01,-17871.33,Rent & Facilities
+ERP00354,2025-08-06,-17078.08,Rent & Facilities
+ERP00355,2025-08-20,-16285.79,Rent & Facilities
+ERP00356,2025-08-18,-18598.68,Software & IT
+ERP00357,2025-08-14,-18466.55,Software & IT
+ERP00358,2025-08-13,-8835.16,Travel & Entertainment
+ERP00359,2025-08-19,-7099.53,Travel & Entertainment
+ERP00360,2025-08-11,-6467.29,Travel & Entertainment
+ERP00361,2025-08-12,-32222.31,Professional Fees
+ERP00362,2025-08-26,-5054.75,Other Operating Expense
+ERP00363,2025-08-19,-4303.9,Other Operating Expense
+ERP00364,2025-08-12,-4894.53,Other Operating Expense
+ERP00365,2025-09-16,76182.05,Customer payment - product
+ERP00366,2025-09-11,89873.87,Customer payment - product
+ERP00367,2025-09-22,67452.0,Customer payment - product
+ERP00368,2025-09-18,84732.08,Customer payment - product
+ERP00369,2025-09-24,67700.3,Customer payment - product
+ERP00370,2025-09-25,68384.95,Customer payment - product
+ERP00371,2025-09-19,59542.37,Customer payment - product
+ERP00372,2025-09-29,81205.52,Customer payment - product
+ERP00373,2025-09-12,93775.72,Customer payment - product
+ERP00374,2025-09-22,81820.22,Customer payment - product
+ERP00375,2025-09-11,63376.27,Customer payment - product
+ERP00376,2025-09-03,56434.85,Customer payment - product
+ERP00377,2025-09-29,84593.34,Customer payment - product
+ERP00378,2025-09-23,98573.84,Customer payment - product
+ERP00379,2025-09-01,50923.35,Customer payment - product
+ERP00380,2025-09-04,79191.16,Customer payment - product
+ERP00381,2025-09-04,72630.96,Customer payment - product
+ERP00382,2025-09-18,52820.89,Customer payment - product
+ERP00383,2025-09-09,45917.77,Customer payment - service
+ERP00384,2025-09-19,60943.82,Customer payment - service
+ERP00385,2025-09-22,32513.38,Customer payment - service
+ERP00386,2025-09-02,37536.49,Customer payment - service
+ERP00387,2025-09-30,55183.41,Customer payment - service
+ERP00388,2025-09-23,-14540.57,Customer refund
+ERP00389,2025-09-22,-21132.32,Customer refund
+ERP00390,2025-09-26,-10934.28,Customer refund
+ERP00391,2025-09-29,-128033.43,Supplier payment - inventory
+ERP00392,2025-09-16,-90627.11,Supplier payment - inventory
+ERP00393,2025-09-02,-94488.72,Supplier payment - inventory
+ERP00394,2025-09-25,-96296.51,Supplier payment - inventory
+ERP00395,2025-09-08,-122890.13,Supplier payment - inventory
+ERP00396,2025-09-12,-87793.21,Payroll
+ERP00397,2025-09-23,-91138.56,Payroll
+ERP00398,2025-09-19,-83658.72,Payroll
+ERP00399,2025-09-09,-80326.31,Payroll
+ERP00400,2025-09-25,-93525.96,Payroll
+ERP00401,2025-09-01,-63034.26,Marketing & Advertising
+ERP00402,2025-09-23,-66382.21,Marketing & Advertising
+ERP00403,2025-09-15,-58769.94,Marketing & Advertising
+ERP00404,2025-09-01,-28057.62,Rent & Facilities
+ERP00405,2025-09-10,-28118.9,Rent & Facilities
+ERP00406,2025-09-11,-21226.93,Software & IT
+ERP00407,2025-09-05,-18082.49,Software & IT
+ERP00408,2025-09-22,-11882.92,Travel & Entertainment
+ERP00409,2025-09-09,-13736.08,Travel & Entertainment
+ERP00410,2025-09-19,-10499.37,Professional Fees
+ERP00411,2025-09-26,-10447.16,Professional Fees
+ERP00412,2025-09-22,-10829.01,Professional Fees
+ERP00413,2025-09-24,-13513.75,Other Operating Expense
+ERP00414,2025-10-10,60257.9,Customer payment - product
+ERP00415,2025-10-31,76626.36,Customer payment - product
+ERP00416,2025-10-22,53125.89,Customer payment - product
+ERP00417,2025-10-28,54312.08,Customer payment - product
+ERP00418,2025-10-02,62936.27,Customer payment - product
+ERP00419,2025-10-06,76256.66,Customer payment - product
+ERP00420,2025-10-14,68814.22,Customer payment - product
+ERP00421,2025-10-22,56711.62,Customer payment - product
+ERP00422,2025-10-13,53587.78,Customer payment - product
+ERP00423,2025-10-10,62165.42,Customer payment - product
+ERP00424,2025-10-30,95097.49,Customer payment - product
+ERP00425,2025-10-01,57756.18,Customer payment - product
+ERP00426,2025-10-22,97458.69,Customer payment - product
+ERP00427,2025-10-09,69569.49,Customer payment - product
+ERP00428,2025-10-14,47525.85,Customer payment - product
+ERP00429,2025-10-07,73564.21,Customer payment - product
+ERP00430,2025-10-07,72206.58,Customer payment - product
+ERP00431,2025-10-27,57261.77,Customer payment - service
+ERP00432,2025-10-03,52860.43,Customer payment - service
+ERP00433,2025-10-10,41705.32,Customer payment - service
+ERP00434,2025-10-28,54023.45,Customer payment - service
+ERP00435,2025-10-28,-13542.68,Customer refund
+ERP00436,2025-10-06,-17014.07,Customer refund
+ERP00437,2025-10-24,-11236.52,Customer refund
+ERP00438,2025-10-13,-9986.97,Customer refund
+ERP00439,2025-10-16,-17402.32,Customer refund
+ERP00440,2025-10-22,-75818.19,Supplier payment - inventory
+ERP00441,2025-10-22,-103918.43,Supplier payment - inventory
+ERP00442,2025-10-10,-117636.74,Supplier payment - inventory
+ERP00443,2025-10-27,-143072.66,Payroll
+ERP00444,2025-10-07,-147146.63,Payroll
+ERP00445,2025-10-07,-141855.72,Payroll
+ERP00446,2025-10-27,-98278.37,Marketing & Advertising
+ERP00447,2025-10-31,-79274.21,Marketing & Advertising
+ERP00448,2025-10-30,-19372.67,Rent & Facilities
+ERP00449,2025-10-06,-19177.33,Rent & Facilities
+ERP00450,2025-10-29,-18775.74,Rent & Facilities
+ERP00451,2025-10-08,-13931.03,Software & IT
+ERP00452,2025-10-14,-12523.32,Software & IT
+ERP00453,2025-10-23,-13763.22,Software & IT
+ERP00454,2025-10-22,-7307.47,Travel & Entertainment
+ERP00455,2025-10-06,-8168.09,Travel & Entertainment
+ERP00456,2025-10-16,-6013.86,Travel & Entertainment
+ERP00457,2025-10-14,-16358.92,Professional Fees
+ERP00458,2025-10-02,-14571.13,Professional Fees
+ERP00459,2025-10-22,-14390.13,Other Operating Expense
+ERP00460,2025-11-26,70348.11,Customer payment - product
+ERP00461,2025-11-07,89153.48,Customer payment - product
+ERP00462,2025-11-06,58341.02,Customer payment - product
+ERP00463,2025-11-05,77671.54,Customer payment - product
+ERP00464,2025-11-10,80757.65,Customer payment - product
+ERP00465,2025-11-18,70314.9,Customer payment - product
+ERP00466,2025-11-13,94880.82,Customer payment - product
+ERP00467,2025-11-10,74021.45,Customer payment - product
+ERP00468,2025-11-25,99376.82,Customer payment - product
+ERP00469,2025-11-11,49804.73,Customer payment - product
+ERP00470,2025-11-19,77749.23,Customer payment - product
+ERP00471,2025-11-10,63720.4,Customer payment - product
+ERP00472,2025-11-06,63387.97,Customer payment - service
+ERP00473,2025-11-28,62365.78,Customer payment - service
+ERP00474,2025-11-26,42257.64,Customer payment - service
+ERP00475,2025-11-19,35940.19,Customer payment - service
+ERP00476,2025-11-10,68422.21,Customer payment - service
+ERP00477,2025-11-28,66754.92,Customer payment - service
+ERP00478,2025-11-27,39142.17,Customer payment - service
+ERP00479,2025-11-18,-23058.05,Customer refund
+ERP00480,2025-11-04,-19991.88,Customer refund
+ERP00481,2025-11-21,-10718.92,Customer refund
+ERP00482,2025-11-25,-105536.83,Supplier payment - inventory
+ERP00483,2025-11-06,-138364.68,Supplier payment - inventory
+ERP00484,2025-11-03,-89225.28,Supplier payment - inventory
+ERP00485,2025-11-26,-108485.14,Supplier payment - inventory
+ERP00486,2025-11-21,-83219.73,Payroll
+ERP00487,2025-11-17,-83447.43,Payroll
+ERP00488,2025-11-20,-85728.82,Payroll
+ERP00489,2025-11-03,-84759.51,Payroll
+ERP00490,2025-11-06,-78780.96,Payroll
+ERP00491,2025-11-11,-60310.33,Marketing & Advertising
+ERP00492,2025-11-19,-62339.17,Marketing & Advertising
+ERP00493,2025-11-19,-48609.05,Marketing & Advertising
+ERP00494,2025-11-19,-16305.77,Rent & Facilities
+ERP00495,2025-11-17,-20192.1,Rent & Facilities
+ERP00496,2025-11-03,-19747.07,Rent & Facilities
+ERP00497,2025-11-27,-17497.78,Software & IT
+ERP00498,2025-11-06,-20461.27,Software & IT
+ERP00499,2025-11-20,-8414.53,Travel & Entertainment
+ERP00500,2025-11-04,-7259.03,Travel & Entertainment
+ERP00501,2025-11-27,-8409.82,Travel & Entertainment
+ERP00502,2025-11-26,-10239.55,Professional Fees
+ERP00503,2025-11-05,-9023.66,Professional Fees
+ERP00504,2025-11-25,-10952.73,Professional Fees
+ERP00505,2025-11-26,-6748.87,Other Operating Expense
+ERP00506,2025-11-25,-6587.59,Other Operating Expense
+ERP00507,2025-12-01,79924.5,Customer payment - product
+ERP00508,2025-12-23,94621.72,Customer payment - product
+ERP00509,2025-12-09,94444.19,Customer payment - product
+ERP00510,2025-12-22,71970.04,Customer payment - product
+ERP00511,2025-12-12,84336.73,Customer payment - product
+ERP00512,2025-12-08,62617.66,Customer payment - product
+ERP00513,2025-12-26,102483.46,Customer payment - product
+ERP00514,2025-12-05,103576.54,Customer payment - product
+ERP00515,2025-12-16,65975.82,Customer payment - product
+ERP00516,2025-12-02,72594.39,Customer payment - product
+ERP00517,2025-12-18,72503.97,Customer payment - product
+ERP00518,2025-12-17,55778.01,Customer payment - product
+ERP00519,2025-12-09,102920.27,Customer payment - product
+ERP00520,2025-12-04,57134.73,Customer payment - product
+ERP00521,2025-12-23,87515.5,Customer payment - product
+ERP00522,2025-12-29,50851.03,Customer payment - service
+ERP00523,2025-12-16,77426.16,Customer payment - service
+ERP00524,2025-12-08,74775.97,Customer payment - service
+ERP00525,2025-12-25,50965.74,Customer payment - service
+ERP00526,2025-12-16,78602.33,Customer payment - service
+ERP00527,2025-12-16,78704.32,Customer payment - service
+ERP00528,2025-12-25,-19320.7,Customer refund
+ERP00529,2025-12-05,-24378.3,Customer refund
+ERP00530,2025-12-18,-19077.24,Customer refund
+ERP00531,2025-12-25,-26527.8,Customer refund
+ERP00532,2025-12-23,-18721.38,Customer refund
+ERP00533,2025-12-25,-133642.7,Supplier payment - inventory
+ERP00534,2025-12-05,-132360.68,Supplier payment - inventory
+ERP00535,2025-12-30,-115657.94,Supplier payment - inventory
+ERP00536,2025-12-10,-109188.91,Supplier payment - inventory
+ERP00537,2025-12-01,-84224.73,Payroll
+ERP00538,2025-12-24,-80873.99,Payroll
+ERP00539,2025-12-04,-83875.02,Payroll
+ERP00540,2025-12-25,-76790.96,Payroll
+ERP00541,2025-12-05,-77825.08,Payroll
+ERP00542,2025-12-10,-62906.27,Marketing & Advertising
+ERP00543,2025-12-01,-84186.64,Marketing & Advertising
+ERP00544,2025-12-15,-85112.68,Marketing & Advertising
+ERP00545,2025-12-23,-61197.96,Rent & Facilities
+ERP00546,2025-12-29,-19597.58,Software & IT
+ERP00547,2025-12-10,-19636.25,Software & IT
+ERP00548,2025-12-12,-25632.56,Travel & Entertainment
+ERP00549,2025-12-25,-26400.66,Professional Fees
+ERP00550,2025-12-29,-6476.8,Other Operating Expense
+ERP00551,2025-12-24,-6434.29,Other Operating Expense
+ERP00552,2025-10-23,-100000.0,Consulting services
+ERP00553,2025-03-05,-25000.0,Consulting services
+ERP00554,2025-12-16,-50000.0,Consulting services
+ERP00555,2025-01-06,-100000.0,Consulting services
+ERP00556,2025-12-01,-75000.0,Consulting services
+ERP00557,2025-06-14,-49582.8,Manual adjustment
+ERP00558,2025-06-07,-36210.48,Manual adjustment
+ERP00559,2025-07-13,-53958.89,Manual adjustment
+ERP00560,2025-12-21,-35533.65,Manual adjustment
+ERP00561,2025-02-08,-34384.43,Manual adjustment
+ERP00562,2025-02-13,-332509.51,Large vendor invoice
+ERP00563,2025-12-05,-251856.89,Large vendor invoice
+ERP00564,2025-10-30,-263817.98,Large vendor invoice
+ERP00565,2025-02-05,-259474.83,Large vendor invoice
