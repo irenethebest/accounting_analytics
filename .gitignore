@@ -19,6 +19,23 @@ Thumbs.db
 # Databricks
 .databricks/
 
+# --- Secrets / credentials: NEVER commit these ---
+.databrickscfg
+.databricks-cfg
+*.env
+.env
+.env.*
+secrets.*
+*.secret
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+service-account*.json
+*token*.txt
+auth.toml
+
 # Keep generated sample data and the embedded dashboard so the repo runs
 # out of the box; ignore only the validation ground-truth artifacts.
 data/_anomaly_truth.json
