@@ -46,7 +46,7 @@ every remaining line as a break:
 ## Architecture
 
 ```
-FinanceData_Portfolio/
+accounting_analytics/         # git repo root
 ├── data_engine/
 │   └── generate_data.py      # Synthetic double-entry GL, budget, ERP & bank ledgers
 ├── data/                     # Generated CSVs (the "source systems")
@@ -63,11 +63,14 @@ FinanceData_Portfolio/
 ├── app/                      # Local, self-contained web dashboard
 │   ├── index.html            # Open in any browser (data embedded)
 │   └── dashboard_data.json   # Computed results
-└── databricks/               # Databricks Lakehouse deployment
-    ├── 01_ingest_bronze.py   # Generate → bronze Delta tables (Unity Catalog)
-    ├── 02_build_gold.py      # Run modules → gold result tables
-    ├── app/                  # Streamlit Databricks App (SQL backend + local fallback)
-    └── README.md             # Databricks setup & deploy guide
+├── databricks/               # Databricks Lakehouse deployment
+│   ├── 01_ingest_bronze.py   # Generate → bronze Delta tables (Unity Catalog)
+│   ├── 02_build_gold.py      # Run modules → gold result tables
+│   ├── app/                  # Streamlit Databricks App (SQL backend + local fallback)
+│   └── README.md             # Databricks setup & deploy guide
+├── databricks.yml            # Asset Bundle: 2-task Job, per-env (dev/test/prod), weekly schedule
+└── .github/workflows/
+    └── databricks-cd.yml     # CI/CD: validate + deploy on push (dev→dev, main→prod)
 ```
 
 ## Two ways to run
@@ -81,6 +84,39 @@ A Python data + analytics layer (pandas) feeds a self-contained HTML/JS front en
 (Chart.js). The computed results are embedded directly into `index.html`, so the
 app opens with a double-click and can also be hosted as a static page
 (e.g. GitHub Pages) with no backend.
+
+---
+
+## Deployment & CI/CD
+
+The Databricks pipeline is defined as code and deployed automatically.
+
+**Pipeline as code (Asset Bundle).** `databricks.yml` declares one Workflow Job
+with two dependent tasks — `ingest_bronze → build_gold` — parameterized by
+environment. Each target writes to its own schema in a single catalog
+(`accounting_analytics.{dev|test|prod}`), and the weekly schedule (Mondays 06:00)
+is active only in prod. Deploy manually with:
+
+```bash
+databricks bundle validate -t dev
+databricks bundle deploy   -t dev
+databricks bundle run finance_pipeline -t dev
+```
+
+**Continuous deployment (GitHub Actions).** `.github/workflows/databricks-cd.yml`
+runs on every push and reports status on the commit, the PR, and the Actions tab:
+
+| Trigger | Action |
+|---------|--------|
+| Pull request | `bundle validate` only (a check on the PR) |
+| Push to `dev` | validate + deploy to **dev** |
+| Push to `main` | validate + deploy to **prod** |
+
+Auth uses a Databricks **service principal** (OAuth machine-to-machine). The
+client ID/secret live in GitHub Actions secrets
+(`DATABRICKS_CLIENT_ID`, `DATABRICKS_CLIENT_SECRET`), never in the repo — only the
+non-secret workspace host is committed. See [`databricks/README.md`](databricks/README.md)
+for the full setup.
 
 ---
 
@@ -121,5 +157,6 @@ Everything is seeded (`SEED = 42`), so results are fully reproducible.
 | FP&A | Budget-vs-actual, variance favorability logic, margin analysis, forecasting |
 | Controls / Audit | Duplicate / round-dollar / off-hours / outlier detection, risk scoring, SOX-style triage |
 | Treasury / Controllership | Bank reconciliation, timing vs. amount breaks, in-transit exposure |
-| Data engineering | Synthetic data generation, pandas pipelines, reproducible builds |
+| Data engineering | Synthetic data generation, pandas pipelines, reproducible builds, medallion (bronze→gold) on Delta / Unity Catalog |
+| DevOps / CI-CD | Databricks Asset Bundles (infra-as-code), multi-env targets, GitHub Actions deploy, service-principal auth, secrets management |
 | Front end | Self-contained interactive dashboard, charts, no-backend deployment |
