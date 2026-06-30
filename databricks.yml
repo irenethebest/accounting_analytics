@@ -1,0 +1,93 @@
+# Databricks Asset Bundle
+# =======================
+# Defines the finance-portfolio data pipeline as code: a multi-task Workflow
+# Job that runs ingest -> gold on a weekly schedule.
+#
+# Deploy:
+#   databricks bundle validate            # check config
+#   databricks bundle deploy -t dev       # create/update the job in your workspace
+#   databricks bundle run finance_pipeline -t dev   # run it once now
+#
+# Auth: run `databricks configure` or set DATABRICKS_HOST/--profile first, and
+# fill in the workspace host under each target below.
+
+bundle:
+  name: finance_portfolio
+
+# ---- Parameters (override per target or on the CLI: --var="catalog=my_cat") ----
+variables:
+  catalog:
+    description: Unity Catalog to write to
+    default: finance_portfolio
+  bronze_schema:
+    description: Bronze (raw) schema
+    default: bronze
+  gold_schema:
+    description: Gold (analytics) schema
+    default: gold
+  notification_email:
+    description: Address for failure alerts
+    default: irenejinheechoi@gmail.com
+
+# ---- Deployment targets ----
+targets:
+  dev:
+    mode: development          # prefixes resources with [dev you] and pauses schedules
+    default: true
+    workspace:
+      host: https://YOUR-WORKSPACE.cloud.databricks.com   # <-- set your workspace URL
+  prod:
+    mode: production
+    workspace:
+      host: https://YOUR-WORKSPACE.cloud.databricks.com   # <-- set your workspace URL
+
+# ---- The pipeline ----
+resources:
+  jobs:
+    finance_pipeline:
+      name: finance-portfolio-pipeline
+      tags:
+        project: finance_portfolio
+        owner: irene
+
+      # Weekly: every Monday at 06:00. Quartz cron (sec min hour day-of-month month day-of-week).
+      schedule:
+        quartz_cron_expression: "0 0 6 ? * MON"
+        timezone_id: America/New_York
+        pause_status: UNPAUSED
+
+      email_notifications:
+        on_failure:
+          - ${var.notification_email}
+
+      tasks:
+        # Task 1 — generate synthetic data and write bronze Delta tables
+        - task_key: ingest_bronze
+          notebook_task:
+            notebook_path: ./databricks/01_ingest_bronze.py
+            base_parameters:
+              catalog: ${var.catalog}
+              schema: ${var.bronze_schema}
+
+        # Task 2 — run analytics modules and write gold tables (runs after task 1)
+        - task_key: build_gold
+          depends_on:
+            - task_key: ingest_bronze
+          notebook_task:
+            notebook_path: ./databricks/02_build_gold.py
+            base_parameters:
+              catalog: ${var.catalog}
+              bronze_schema: ${var.bronze_schema}
+              gold_schema: ${var.gold_schema}
+
+      # Compute: defaults to serverless jobs compute (no cluster config needed,
+      # works on any cloud). If serverless isn't enabled in your workspace,
+      # delete nothing above and instead uncomment the job_clusters block below
+      # and add `job_cluster_key: small` to each task.
+      #
+      # job_clusters:
+      #   - job_cluster_key: small
+      #     new_cluster:
+      #       spark_version: 15.4.x-scala2.12     # set a current LTS for your workspace
+      #       node_type_id: i3.xlarge             # AWS; use Standard_DS3_v2 (Azure) / n1-standard-4 (GCP)
+      #       num_workers: 1
