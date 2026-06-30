@@ -1,4 +1,4 @@
-# Databricks Asset Bundle
+# Declarative Automation Bundles (previously Databricks Asset Bundle)
 # =======================
 # Pipeline as code: a multi-task Workflow Job (ingest -> gold) deployed per
 # environment. One catalog, one schema per environment (dev / test / prod).
