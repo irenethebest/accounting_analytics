@@ -1,5 +1,7 @@
 # Finance Analytics Platform
 
+[![Databricks CD](https://github.com/irenethebest/accounting_analytics/actions/workflows/databricks-cd.yml/badge.svg)](https://github.com/irenethebest/accounting_analytics/actions/workflows/databricks-cd.yml)
+
 A finance & accounting data product built from scratch on a synthetic dataset.
 It generates a coherent company's books, then runs three analytics engines over
 them and presents the results in a single, self-contained, browser-based app.

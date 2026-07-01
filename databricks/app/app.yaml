@@ -17,6 +17,6 @@ env:
   - name: DATABRICKS_WAREHOUSE_ID
     valueFrom: sql_warehouse
   - name: APP_CATALOG
-    value: finance_portfolio
+    value: accounting_analytics
   - name: APP_GOLD_SCHEMA
-    value: gold
+    value: dev
