@@ -27,6 +27,9 @@ variables:
   notification_email:
     description: Address for failure alerts
     default: irenejinheechoi@gmail.com
+  warehouse_id:
+    description: SQL warehouse ID the app queries (SQL Warehouses UI, or `databricks warehouses list`)
+    default: "7474643992963395"   
 
 # ---- Environments ----
 targets:
@@ -105,3 +108,32 @@ resources:
       #       spark_version: 15.4.x-scala2.12
       #       node_type_id: i3.xlarge          # AWS; Azure: Standard_DS3_v2 / GCP: n1-standard-4
       #       num_workers: 1
+
+  # ---- Streamlit dashboard, one per environment ----
+  apps:
+    finance_app:
+      # Unique per environment: accounting-analytics-dev / -test / -prod
+      name: accounting-analytics-${var.schema}
+      description: FP&A variance, anomaly detection & reconciliation dashboard
+      source_code_path: ./databricks/app
+      config:
+        command:
+          - streamlit
+          - run
+          - app.py
+          - --server.port=8000
+          - --server.address=0.0.0.0
+        # These override app.yaml, so each env points at its own schema.
+        env:
+          - name: DATABRICKS_WAREHOUSE_ID
+            value: ${var.warehouse_id}
+          - name: APP_CATALOG
+            value: ${var.catalog}
+          - name: APP_GOLD_SCHEMA
+            value: ${var.schema}
+      # Binding the warehouse also grants the app's service principal CAN_USE on it.
+      resources:
+        - name: sql_warehouse
+          sql_warehouse:
+            id: ${var.warehouse_id}
+            permission: CAN_USE
