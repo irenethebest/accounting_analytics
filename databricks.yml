@@ -141,3 +141,5 @@ resources:
       permissions:
         - level: CAN_MANAGE
           user_name: irenejinheechoi@gmail.com
+        - level: CAN_MANAGE
+          user_name: jchoi867@gatech.edu
