@@ -1,5 +1,5 @@
 """
-Meridian Finance Analytics Platform — Streamlit (Databricks App)
+Jinhee Finance Analytics Platform — Streamlit (Databricks App)
 ================================================================
 Dual-mode dashboard:
 
@@ -30,7 +30,7 @@ CATALOG = os.getenv("APP_CATALOG", "finance_portfolio")
 GOLD = os.getenv("APP_GOLD_SCHEMA", "gold")
 WAREHOUSE_ID = os.getenv("DATABRICKS_WAREHOUSE_ID")
 
-st.set_page_config(page_title="Meridian Finance Analytics",
+st.set_page_config(page_title="Jinhee Finance Analytics",
                    page_icon="📊", layout="wide")
 
 NAVY, ACCENT, TEAL, GOOD, BAD, WARN, GOLD_C, PURPLE = (
@@ -158,7 +158,7 @@ except Exception as e:  # pragma: no cover
     st.stop()
 
 st.markdown(
-    f"<h2 style='margin-bottom:0;color:{NAVY}'>Meridian Outdoor Co. — Finance Analytics Platform</h2>"
+    f"<h2 style='margin-bottom:0;color:{NAVY}'>Jinhee Financial Co. — Finance Analytics Platform</h2>"
     f"<p style='color:#6b7a8d;margin-top:4px'>FP&A Variance · Anomaly Detection · Reconciliation "
     f"&nbsp;|&nbsp; Source: {source}</p>", unsafe_allow_html=True)
 

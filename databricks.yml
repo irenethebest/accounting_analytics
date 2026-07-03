@@ -140,6 +140,4 @@ resources:
       # Let the owner see/manage the app even though CI's service principal creates it
       permissions:
         - level: CAN_MANAGE
-          user_name: irenejinheechoi@gmail.com
-        - level: CAN_MANAGE
           user_name: jchoi867@gatech.edu

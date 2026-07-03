@@ -2,7 +2,7 @@
 Synthetic finance-data engine for the FinanceData Portfolio platform.
 
 Generates a coherent, realistic financial dataset for a fictional mid-size
-consumer-products company ("Meridian Outdoor Co.") for fiscal year 2025.
+consumer-products company ("Jinhee Financial Co.") for fiscal year 2025.
 
 Public API
 ----------
@@ -39,7 +39,7 @@ import pandas as pd
 
 SEED = 42
 YEAR = 2025
-COMPANY = "Meridian Outdoor Co."
+COMPANY = "Jinhee Financial Co."
 
 # ---------------------------------------------------------------------------
 # Static reference data

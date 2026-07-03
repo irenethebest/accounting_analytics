@@ -17,7 +17,7 @@ interactive dashboard.
 ## What it does
 
 The platform models a fictional mid-size consumer-products company,
-**Meridian Outdoor Co.** (FY2025), and ships three modules:
+**Jinhee Financial Co.** (FY2025), and ships three modules:
 
 ### 1. FP&A Variance Analyzer
 Builds a budget-vs-actual P&L from the general ledger and the operating budget.

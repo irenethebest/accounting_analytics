@@ -36,7 +36,7 @@ def main():
     bank = read_csv_dicts("bank_statement.csv")
 
     payload = {
-        "company": "Meridian Outdoor Co.",
+        "company": "Jinhee Financial Co.",
         "fiscal_year": 2025,
         "generated": pd.Timestamp.now().strftime("%Y-%m-%d %H:%M"),
         "variance": variance.build(journal, budget, coa),
