@@ -1,0 +1,145 @@
+account,account_name,month,budget_amount
+4000,Product Revenue,2025-01,1295000.0
+4000,Product Revenue,2025-02,1387500.0
+4000,Product Revenue,2025-03,1757500.0
+4000,Product Revenue,2025-04,2035000.0
+4000,Product Revenue,2025-05,2312500.0
+4000,Product Revenue,2025-06,2405000.0
+4000,Product Revenue,2025-07,2220000.0
+4000,Product Revenue,2025-08,1942500.0
+4000,Product Revenue,2025-09,1850000.0
+4000,Product Revenue,2025-10,1665000.0
+4000,Product Revenue,2025-11,1942500.0
+4000,Product Revenue,2025-12,2220000.0
+4100,Service Revenue,2025-01,168000.0
+4100,Service Revenue,2025-02,180000.0
+4100,Service Revenue,2025-03,228000.0
+4100,Service Revenue,2025-04,264000.0
+4100,Service Revenue,2025-05,300000.0
+4100,Service Revenue,2025-06,312000.0
+4100,Service Revenue,2025-07,288000.0
+4100,Service Revenue,2025-08,252000.0
+4100,Service Revenue,2025-09,240000.0
+4100,Service Revenue,2025-10,216000.0
+4100,Service Revenue,2025-11,252000.0
+4100,Service Revenue,2025-12,288000.0
+4900,Sales Returns & Allowances,2025-01,-45500.0
+4900,Sales Returns & Allowances,2025-02,-48750.0
+4900,Sales Returns & Allowances,2025-03,-61750.0
+4900,Sales Returns & Allowances,2025-04,-71500.0
+4900,Sales Returns & Allowances,2025-05,-81250.0
+4900,Sales Returns & Allowances,2025-06,-84500.0
+4900,Sales Returns & Allowances,2025-07,-78000.0
+4900,Sales Returns & Allowances,2025-08,-68250.0
+4900,Sales Returns & Allowances,2025-09,-65000.0
+4900,Sales Returns & Allowances,2025-10,-58500.0
+4900,Sales Returns & Allowances,2025-11,-68250.0
+4900,Sales Returns & Allowances,2025-12,-78000.0
+5000,Cost of Goods Sold,2025-01,644000.0
+5000,Cost of Goods Sold,2025-02,690000.0
+5000,Cost of Goods Sold,2025-03,874000.0
+5000,Cost of Goods Sold,2025-04,1012000.0
+5000,Cost of Goods Sold,2025-05,1150000.0
+5000,Cost of Goods Sold,2025-06,1196000.0
+5000,Cost of Goods Sold,2025-07,1104000.0
+5000,Cost of Goods Sold,2025-08,966000.0
+5000,Cost of Goods Sold,2025-09,920000.0
+5000,Cost of Goods Sold,2025-10,828000.0
+5000,Cost of Goods Sold,2025-11,966000.0
+5000,Cost of Goods Sold,2025-12,1104000.0
+6000,Salaries & Wages,2025-01,430000.0
+6000,Salaries & Wages,2025-02,430000.0
+6000,Salaries & Wages,2025-03,430000.0
+6000,Salaries & Wages,2025-04,430000.0
+6000,Salaries & Wages,2025-05,430000.0
+6000,Salaries & Wages,2025-06,430000.0
+6000,Salaries & Wages,2025-07,430000.0
+6000,Salaries & Wages,2025-08,430000.0
+6000,Salaries & Wages,2025-09,430000.0
+6000,Salaries & Wages,2025-10,430000.0
+6000,Salaries & Wages,2025-11,430000.0
+6000,Salaries & Wages,2025-12,430000.0
+6100,Marketing & Advertising,2025-01,126000.0
+6100,Marketing & Advertising,2025-02,135000.0
+6100,Marketing & Advertising,2025-03,171000.0
+6100,Marketing & Advertising,2025-04,198000.0
+6100,Marketing & Advertising,2025-05,225000.0
+6100,Marketing & Advertising,2025-06,234000.0
+6100,Marketing & Advertising,2025-07,216000.0
+6100,Marketing & Advertising,2025-08,189000.0
+6100,Marketing & Advertising,2025-09,180000.0
+6100,Marketing & Advertising,2025-10,162000.0
+6100,Marketing & Advertising,2025-11,189000.0
+6100,Marketing & Advertising,2025-12,216000.0
+6200,Rent & Facilities,2025-01,55000.0
+6200,Rent & Facilities,2025-02,55000.0
+6200,Rent & Facilities,2025-03,55000.0
+6200,Rent & Facilities,2025-04,55000.0
+6200,Rent & Facilities,2025-05,55000.0
+6200,Rent & Facilities,2025-06,55000.0
+6200,Rent & Facilities,2025-07,55000.0
+6200,Rent & Facilities,2025-08,55000.0
+6200,Rent & Facilities,2025-09,55000.0
+6200,Rent & Facilities,2025-10,55000.0
+6200,Rent & Facilities,2025-11,55000.0
+6200,Rent & Facilities,2025-12,55000.0
+6300,Software & IT,2025-01,38000.0
+6300,Software & IT,2025-02,38000.0
+6300,Software & IT,2025-03,38000.0
+6300,Software & IT,2025-04,38000.0
+6300,Software & IT,2025-05,38000.0
+6300,Software & IT,2025-06,38000.0
+6300,Software & IT,2025-07,38000.0
+6300,Software & IT,2025-08,38000.0
+6300,Software & IT,2025-09,38000.0
+6300,Software & IT,2025-10,38000.0
+6300,Software & IT,2025-11,38000.0
+6300,Software & IT,2025-12,38000.0
+6400,Travel & Entertainment,2025-01,15400.0
+6400,Travel & Entertainment,2025-02,16500.0
+6400,Travel & Entertainment,2025-03,20900.0
+6400,Travel & Entertainment,2025-04,24200.0
+6400,Travel & Entertainment,2025-05,27500.0
+6400,Travel & Entertainment,2025-06,28600.0
+6400,Travel & Entertainment,2025-07,26400.0
+6400,Travel & Entertainment,2025-08,23100.0
+6400,Travel & Entertainment,2025-09,22000.0
+6400,Travel & Entertainment,2025-10,19800.0
+6400,Travel & Entertainment,2025-11,23100.0
+6400,Travel & Entertainment,2025-12,26400.0
+6500,Professional Fees,2025-01,30000.0
+6500,Professional Fees,2025-02,30000.0
+6500,Professional Fees,2025-03,30000.0
+6500,Professional Fees,2025-04,30000.0
+6500,Professional Fees,2025-05,30000.0
+6500,Professional Fees,2025-06,30000.0
+6500,Professional Fees,2025-07,30000.0
+6500,Professional Fees,2025-08,30000.0
+6500,Professional Fees,2025-09,30000.0
+6500,Professional Fees,2025-10,30000.0
+6500,Professional Fees,2025-11,30000.0
+6500,Professional Fees,2025-12,30000.0
+6600,Depreciation,2025-01,26000.0
+6600,Depreciation,2025-02,26000.0
+6600,Depreciation,2025-03,26000.0
+6600,Depreciation,2025-04,26000.0
+6600,Depreciation,2025-05,26000.0
+6600,Depreciation,2025-06,26000.0
+6600,Depreciation,2025-07,26000.0
+6600,Depreciation,2025-08,26000.0
+6600,Depreciation,2025-09,26000.0
+6600,Depreciation,2025-10,26000.0
+6600,Depreciation,2025-11,26000.0
+6600,Depreciation,2025-12,26000.0
+6900,Other Operating Expense,2025-01,14000.0
+6900,Other Operating Expense,2025-02,14000.0
+6900,Other Operating Expense,2025-03,14000.0
+6900,Other Operating Expense,2025-04,14000.0
+6900,Other Operating Expense,2025-05,14000.0
+6900,Other Operating Expense,2025-06,14000.0
+6900,Other Operating Expense,2025-07,14000.0
+6900,Other Operating Expense,2025-08,14000.0
+6900,Other Operating Expense,2025-09,14000.0
+6900,Other Operating Expense,2025-10,14000.0
+6900,Other Operating Expense,2025-11,14000.0
+6900,Other Operating Expense,2025-12,14000.0

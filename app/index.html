@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jinhee Finance Analytics Platform</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  :root{
+    --navy:#0f2742; --navy2:#1b3a5c; --accent:#2f80ed; --teal:#1aa098;
+    --bg:#f4f6f9; --card:#ffffff; --ink:#1c2733; --muted:#6b7a8d;
+    --good:#1a9c6b; --bad:#d2483f; --warn:#e0883a; --line:#e3e8ee;
+    --high:#d2483f; --med:#e0883a; --low:#c8b53a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       background:var(--bg);color:var(--ink);line-height:1.45}
+  header{background:linear-gradient(120deg,var(--navy),var(--navy2));color:#fff;padding:22px 32px}
+  header .row{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;max-width:1200px;margin:0 auto}
+  header h1{font-size:22px;font-weight:650;letter-spacing:.2px}
+  header .sub{color:#aebfd2;font-size:13px;margin-top:3px}
+  header .meta{font-size:12px;color:#aebfd2;text-align:right}
+  nav{background:var(--navy);display:flex;gap:2px;padding:0 32px;position:sticky;top:0;z-index:10}
+  nav .inner{display:flex;gap:2px;max-width:1200px;margin:0 auto;width:100%}
+  nav button{background:transparent;border:none;color:#aebfd2;padding:13px 20px;font-size:14px;
+             font-weight:550;cursor:pointer;border-bottom:3px solid transparent;transition:.15s}
+  nav button:hover{color:#fff}
+  nav button.active{color:#fff;border-bottom-color:var(--accent)}
+  main{max-width:1200px;margin:0 auto;padding:26px 32px 60px}
+  .tab{display:none;animation:fade .25s ease}
+  .tab.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:22px}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+  .kpi .label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+  .kpi .val{font-size:25px;font-weight:680;margin-top:6px}
+  .kpi .delta{font-size:12.5px;margin-top:5px;font-weight:600}
+  .kpi .delta.good{color:var(--good)} .kpi .delta.bad{color:var(--bad)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+  @media(max-width:900px){.grid2,.grid3{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px;margin-bottom:18px}
+  .card h3{font-size:14.5px;font-weight:620;margin-bottom:3px}
+  .card .hint{font-size:12px;color:var(--muted);margin-bottom:14px}
+  .chartbox{position:relative;height:300px}
+  .chartbox.sm{height:240px}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:right;padding:8px 10px;border-bottom:1px solid var(--line)}
+  th:first-child,td:first-child{text-align:left}
+  th{font-size:11px;text-transform:uppercase;letter-spacing:.4px;color:var(--muted);font-weight:600}
+  tbody tr:hover{background:#f8fafc}
+  .pos{color:var(--good);font-weight:600} .neg{color:var(--bad);font-weight:600}
+  .pill{display:inline-block;padding:2px 9px;border-radius:20px;font-size:11px;font-weight:600}
+  .pill.fav{background:#e3f5ec;color:var(--good)} .pill.unfav{background:#fae6e4;color:var(--bad)}
+  .tag{display:inline-block;padding:2px 8px;border-radius:5px;font-size:11px;font-weight:600;
+       background:#eef2f7;color:var(--navy2);margin:1px}
+  .score{display:inline-block;min-width:38px;text-align:center;padding:2px 8px;border-radius:6px;
+         font-weight:700;color:#fff;font-size:12px}
+  .breaktype{font-weight:600;font-size:11px;padding:2px 8px;border-radius:5px}
+  .bt-timing{background:#fff2dd;color:#a8651a}
+  .bt-amount{background:#fde8e6;color:#b13a31}
+  .bt-missing_in_bank{background:#e7eefc;color:#28508f}
+  .bt-bank_only{background:#eee7fb;color:#5b3aa0}
+  .section-title{font-size:18px;font-weight:660;margin:4px 0 16px;color:var(--navy)}
+  .scroll{max-height:430px;overflow:auto}
+  .muted{color:var(--muted);font-size:12.5px}
+  footer{max-width:1200px;margin:0 auto;padding:0 32px 40px;color:var(--muted);font-size:12px}
+</style>
+</head>
+<body>
+<header>
+  <div class="row">
+    <div>
+      <h1 id="co">Finance Analytics Platform</h1>
+      <div class="sub">FP&amp;A Variance &middot; Accounting Anomaly Detection &middot; Reconciliation Automation</div>
+    </div>
+    <div class="meta" id="meta"></div>
+  </div>
+</header>
+<nav><div class="inner">
+  <button class="active" data-tab="fpa">FP&amp;A Variance</button>
+  <button data-tab="anomaly">Anomaly Detector</button>
+  <button data-tab="recon">Reconciliation</button>
+</div></nav>
+
+<main>
+  <!-- ============ FP&A ============ -->
+  <section class="tab active" id="fpa">
+    <div class="kpis" id="fpa-kpis"></div>
+    <div class="grid2">
+      <div class="card">
+        <h3>Net Revenue, Gross Profit &amp; Operating Income</h3>
+        <div class="hint">Monthly actuals with 3-month forecast (dashed)</div>
+        <div class="chartbox"><canvas id="trendChart"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>Largest Budget Variances</h3>
+        <div class="hint">Actual vs budget by account ($), green = favorable</div>
+        <div class="chartbox"><canvas id="varChart"></canvas></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Budget vs Actual P&amp;L</h3>
+      <div class="hint">Full income statement with variance and favorability</div>
+      <table id="plTable"><thead><tr>
+        <th>Account</th><th>Actual</th><th>Budget</th><th>Variance $</th><th>Var %</th><th>Status</th>
+      </tr></thead><tbody></tbody></table>
+    </div>
+  </section>
+
+  <!-- ============ ANOMALY ============ -->
+  <section class="tab" id="anomaly">
+    <div class="kpis" id="an-kpis"></div>
+    <div class="grid2">
+      <div class="card">
+        <h3>Flags by Type</h3>
+        <div class="hint">Control-relevant red flags across the entry population</div>
+        <div class="chartbox sm"><canvas id="flagChart"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>Risk Banding</h3>
+        <div class="hint">Flagged entries by composite risk score</div>
+        <div class="chartbox sm"><canvas id="riskChart"></canvas></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Flagged Entries &mdash; Triage Queue</h3>
+      <div class="hint">Ranked by risk score; highest priority for review first</div>
+      <div class="scroll"><table id="anTable"><thead><tr>
+        <th>Risk</th><th>Entry</th><th>Date</th><th>Account</th><th>Amount</th><th>User</th><th>Flags</th>
+      </tr></thead><tbody></tbody></table></div>
+    </div>
+  </section>
+
+  <!-- ============ RECON ============ -->
+  <section class="tab" id="recon">
+    <div class="kpis" id="rc-kpis"></div>
+    <div class="grid2">
+      <div class="card">
+        <h3>Match Outcomes</h3>
+        <div class="hint">ERP cash ledger vs bank statement</div>
+        <div class="chartbox sm"><canvas id="reconChart"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>Break Exposure ($)</h3>
+        <div class="hint">Dollar value sitting in each unreconciled bucket</div>
+        <div class="chartbox sm"><canvas id="expChart"></canvas></div>
+      </div>
+    </div>
+    <div class="card">
+      <h3>Reconciliation Breaks &mdash; Work Queue</h3>
+      <div class="hint">Top breaks by absolute amount, classified for routing</div>
+      <div class="scroll"><table id="rcTable"><thead><tr>
+        <th>Type</th><th>ERP Ref</th><th>Bank Ref</th><th>Amount</th><th>Diff</th><th>ERP Date</th><th>Bank Date</th><th>Memo</th>
+      </tr></thead><tbody></tbody></table></div>
+    </div>
+  </section>
+</main>
+<footer>
+  Synthetic data &mdash; <span id="ft-co"></span>, FY<span id="ft-fy"></span>.
+  Built as a portfolio demonstration of FP&amp;A, accounting controls, and data-engineering skills.
+  No real financial data is used.
+</footer>
+
+<script>
+/*DATA_START*/
+const DASHBOARD_DATA = {"company": "Jinhee Financial Co.", "fiscal_year": 2025, "generated": "2026-07-02 19:11", "variance": {"summary": {"net_revenue": {"actual": 25608183, "budget": 25211250}, "cogs": {"actual": 11788859, "budget": 11454000}, "gross_profit": {"actual": 13819325, "budget": 13757250}, "opex": {"actual": 11468901, "budget": 9630900}, "operating_income": {"actual": 2350424, "budget": 4126350}, "gross_margin_pct": 54.0, "operating_margin_pct": 9.2}, "pl_lines": [{"account": "4000", "account_name": "Product Revenue", "group": "Revenue", "actual": 23309958.0, "budget": 23032500.0, "variance": 277458.0, "variance_pct": 1.2, "favorable": true}, {"account": "4100", "account_name": "Service Revenue", "group": "Revenue", "actual": 3105318.0, "budget": 2988000.0, "variance": 117318.0, "variance_pct": 3.9, "favorable": true}, {"account": "4900", "account_name": "Sales Returns & Allowances", "group": "Contra-Revenue", "actual": 807093.0, "budget": 809250.0, "variance": -2157.0, "variance_pct": -0.3, "favorable": true}, {"account": "5000", "account_name": "Cost of Goods Sold", "group": "COGS", "actual": 11788859.0, "budget": 11454000.0, "variance": 334859.0, "variance_pct": 2.9, "favorable": false}, {"account": "6000", "account_name": "Salaries & Wages", "group": "Opex", "actual": 5176317.0, "budget": 5160000.0, "variance": 16317.0, "variance_pct": 0.3, "favorable": false}, {"account": "6100", "account_name": "Marketing & Advertising", "group": "Opex", "actual": 2617894.0, "budget": 2241000.0, "variance": 376894.0, "variance_pct": 16.8, "favorable": false}, {"account": "6200", "account_name": "Rent & Facilities", "group": "Opex", "actual": 668108.0, "budget": 660000.0, "variance": 8108.0, "variance_pct": 1.2, "favorable": false}, {"account": "6300", "account_name": "Software & IT", "group": "Opex", "actual": 459614.0, "budget": 456000.0, "variance": 3614.0, "variance_pct": 0.8, "favorable": false}, {"account": "6400", "account_name": "Travel & Entertainment", "group": "Opex", "actual": 301516.0, "budget": 273900.0, "variance": 27616.0, "variance_pct": 10.1, "favorable": false}, {"account": "6500", "account_name": "Professional Fees", "group": "Opex", "actual": 1226480.0, "budget": 360000.0, "variance": 866480.0, "variance_pct": 240.7, "favorable": false}, {"account": "6600", "account_name": "Depreciation", "group": "Opex", "actual": 340810.0, "budget": 312000.0, "variance": 28810.0, "variance_pct": 9.2, "favorable": false}, {"account": "6900", "account_name": "Other Operating Expense", "group": "Opex", "actual": 678162.0, "budget": 168000.0, "variance": 510162.0, "variance_pct": 303.7, "favorable": false}], "monthly": [{"month": "2025-01", "net_revenue": 1405048, "gross_profit": 838576, "operating_income": -17008, "gross_margin_pct": 59.7}, {"month": "2025-02", "net_revenue": 1642804, "gross_profit": 863738, "operating_income": -498712, "gross_margin_pct": 52.6}, {"month": "2025-03", "net_revenue": 1980280, "gross_profit": 830505, "operating_income": 35873, "gross_margin_pct": 41.9}, {"month": "2025-04", "net_revenue": 2524386, "gross_profit": 1320980, "operating_income": 511435, "gross_margin_pct": 52.3}, {"month": "2025-05", "net_revenue": 2418544, "gross_profit": 1204095, "operating_income": 331435, "gross_margin_pct": 49.8}, {"month": "2025-06", "net_revenue": 2630921, "gross_profit": 1564485, "operating_income": 631240, "gross_margin_pct": 59.5}, {"month": "2025-07", "net_revenue": 2322487, "gross_profit": 1096394, "operating_income": 180658, "gross_margin_pct": 47.2}, {"month": "2025-08", "net_revenue": 2354891, "gross_profit": 1404395, "operating_income": 624245, "gross_margin_pct": 59.6}, {"month": "2025-09", "net_revenue": 2020018, "gross_profit": 1252193, "operating_income": 368554, "gross_margin_pct": 62.0}, {"month": "2025-10", "net_revenue": 1721640, "gross_profit": 711753, "operating_income": -451695, "gross_margin_pct": 41.3}, {"month": "2025-11", "net_revenue": 2154134, "gross_profit": 1416591, "operating_income": 557103, "gross_margin_pct": 65.8}, {"month": "2025-12", "net_revenue": 2433031, "gross_profit": 1315619, "operating_income": 77295, "gross_margin_pct": 54.1}], "forecast": [{"month": "2026-01", "net_revenue_forecast": 2102935}, {"month": "2026-02", "net_revenue_forecast": 2230033}, {"month": "2026-03", "net_revenue_forecast": 2255333}], "top_variances": [{"account": "6500", "account_name": "Professional Fees", "group": "Opex", "actual": 1226480.0, "budget": 360000.0, "variance": 866480.0, "variance_pct": 240.7, "favorable": false}, {"account": "6900", "account_name": "Other Operating Expense", "group": "Opex", "actual": 678162.0, "budget": 168000.0, "variance": 510162.0, "variance_pct": 303.7, "favorable": false}, {"account": "6100", "account_name": "Marketing & Advertising", "group": "Opex", "actual": 2617894.0, "budget": 2241000.0, "variance": 376894.0, "variance_pct": 16.8, "favorable": false}, {"account": "5000", "account_name": "Cost of Goods Sold", "group": "COGS", "actual": 11788859.0, "budget": 11454000.0, "variance": 334859.0, "variance_pct": 2.9, "favorable": false}, {"account": "4000", "account_name": "Product Revenue", "group": "Revenue", "actual": 23309958.0, "budget": 23032500.0, "variance": 277458.0, "variance_pct": 1.2, "favorable": true}, {"account": "4100", "account_name": "Service Revenue", "group": "Revenue", "actual": 3105318.0, "budget": 2988000.0, "variance": 117318.0, "variance_pct": 3.9, "favorable": true}]}, "anomaly": {"total_entries": 898, "flagged_count": 33, "flag_rate_pct": 3.7, "by_type": {"Duplicate": 12, "Round-dollar": 5, "Weekend": 5, "Off-hours": 5, "Outlier": 11}, "risk_band": {"High (>=70)": 0, "Medium (40-69)": 17, "Low (<40)": 16}, "flagged": [{"entry_id": "JE202500890", "date": "2025-06-14", "posted_ts": "2025-06-14 03:50:00", "account": "6500", "account_name": "Professional Fees", "department": "G&A", "description": "Manual adjustment", "amount": 49582.8, "user": "kkim", "flags": ["Off-hours", "Weekend"], "risk_score": 55}, {"entry_id": "JE202500891", "date": "2025-06-07", "posted_ts": "2025-06-07 03:52:00", "account": "6900", "account_name": "Other Operating Expense", "department": "G&A", "description": "Manual adjustment", "amount": 36210.48, "user": "jchen", "flags": ["Off-hours", "Weekend"], "risk_score": 55}, {"entry_id": "JE202500892", "date": "2025-07-13", "posted_ts": "2025-07-13 23:19:00", "account": "6900", "account_name": "Other Operating Expense", "department": "G&A", "description": "Manual adjustment", "amount": 53958.89, "user": "afarrell", "flags": ["Off-hours", "Weekend"], "risk_score": 55}, {"entry_id": "JE202500893", "date": "2025-12-21", "posted_ts": "2025-12-21 03:12:00", "account": "6900", "account_name": "Other Operating Expense", "department": "G&A", "description": "Manual adjustment", "amount": 35533.65, "user": "afarrell", "flags": ["Off-hours", "Weekend"], "risk_score": 55}, {"entry_id": "JE202500894", "date": "2025-02-08", "posted_ts": "2025-02-08 23:27:00", "account": "6900", "account_name": "Other Operating Expense", "department": "G&A", "description": "Manual adjustment", "amount": 34384.43, "user": "mlopez", "flags": ["Off-hours", "Weekend"], "risk_score": 55}, {"entry_id": "JE202500082", "date": "2025-02-20", "posted_ts": "2025-02-20 09:45:00", "account": "4000", "account_name": "Product Revenue", "department": "Sales", "description": "Product sale - cash", "amount": 40243.4, "user": "afarrell", "flags": ["Duplicate"], "risk_score": 40}, {"entry_id": "JE202500246", "date": "2025-04-09", "posted_ts": "2025-04-09 17:00:00", "account": "4000", "account_name": "Product Revenue", "department": "Sales", "description": "Product sale - cash", "amount": 101007.19, "user": "jchen", "flags": ["Duplicate"], "risk_score": 40}, {"entry_id": "JE202500433", "date": "2025-06-19", "posted_ts": "2025-06-19 10:40:00", "account": "6600", "account_name": "Depreciation", "department": "Operations", "description": "Monthly depreciation", "amount": 28879.57, "user": "SYSTEM", "flags": ["Duplicate"], "risk_score": 40}, {"entry_id": "JE202500530", "date": "2025-08-08", "posted_ts": "2025-08-08 08:15:00", "account": "4000", "account_name": "Product Revenue", "department": "Sales", "description": "Product sale - cash", "amount": 121859.46, "user": "kkim", "flags": ["Duplicate"], "risk_score": 40}, {"entry_id": "JE202500641", "date": "2025-09-23", "posted_ts": "2025-09-23 12:40:00", "account": "6100", "account_name": "Marketing & Advertising", "department": "Marketing", "description": "Marketing & Advertising expense", "amount": 66382.21, "user": "kkim", "flags": ["Duplicate"], "risk_score": 40}, {"entry_id": "JE202500783", "date": "2025-11-21", "posted_ts": "2025-11-21 09:50:00", "account": "6000", "account_name": "Salaries & Wages", "department": "G&A", "description": "Payroll run", "amount": 83219.73, "user": "SYSTEM", "flags": ["Duplicate"], "risk_score": 40}, {"entry_id": "JE202500879", "date": "2025-02-20", "posted_ts": "2025-02-20 09:45:00", "account": "4000", "account_name": "Product Revenue", "department": "Sales", "description": "Product sale - cash (DUP)", "amount": 40243.4, "user": "afarrell", "flags": ["Duplicate"], "risk_score": 40}, {"entry_id": "JE202500880", "date": "2025-06-19", "posted_ts": "2025-06-19 10:40:00", "account": "6600", "account_name": "Depreciation", "department": "Operations", "description": "Monthly depreciation (DUP)", "amount": 28879.57, "user": "SYSTEM", "flags": ["Duplicate"], "risk_score": 40}, {"entry_id": "JE202500881", "date": "2025-09-23", "posted_ts": "2025-09-23 12:40:00", "account": "6100", "account_name": "Marketing & Advertising", "department": "Marketing", "description": "Marketing & Advertising expense (DUP)", "amount": 66382.21, "user": "kkim", "flags": ["Duplicate"], "risk_score": 40}, {"entry_id": "JE202500882", "date": "2025-04-09", "posted_ts": "2025-04-09 17:00:00", "account": "4000", "account_name": "Product Revenue", "department": "Sales", "description": "Product sale - cash (DUP)", "amount": 101007.19, "user": "jchen", "flags": ["Duplicate"], "risk_score": 40}, {"entry_id": "JE202500883", "date": "2025-08-08", "posted_ts": "2025-08-08 08:15:00", "account": "4000", "account_name": "Product Revenue", "department": "Sales", "description": "Product sale - cash (DUP)", "amount": 121859.46, "user": "kkim", "flags": ["Duplicate"], "risk_score": 40}, {"entry_id": "JE202500884", "date": "2025-11-21", "posted_ts": "2025-11-21 09:50:00", "account": "6000", "account_name": "Salaries & Wages", "department": "G&A", "description": "Payroll run (DUP)", "amount": 83219.73, "user": "SYSTEM", "flags": ["Duplicate"], "risk_score": 40}, {"entry_id": "JE202500287", "date": "2025-04-24", "posted_ts": "2025-04-24 13:10:00", "account": "6000", "account_name": "Salaries & Wages", "department": "G&A", "description": "Payroll run", "amount": 229009.47, "user": "SYSTEM", "flags": ["Outlier (z=3.2)"], "risk_score": 35}, {"entry_id": "JE202500288", "date": "2025-04-11", "posted_ts": "2025-04-11 10:45:00", "account": "6000", "account_name": "Salaries & Wages", "department": "G&A", "description": "Payroll run", "amount": 207378.63, "user": "SYSTEM", "flags": ["Outlier (z=2.7)"], "risk_score": 35}, {"entry_id": "JE202500292", "date": "2025-04-28", "posted_ts": "2025-04-28 08:30:00", "account": "6200", "account_name": "Rent & Facilities", "department": "G&A", "description": "Rent & Facilities expense", "amount": 52176.66, "user": "mlopez", "flags": ["Outlier (z=2.6)"], "risk_score": 35}, {"entry_id": "JE202500365", "date": "2025-05-13", "posted_ts": "2025-05-13 15:10:00", "account": "6400", "account_name": "Travel & Entertainment", "department": "Sales", "description": "Travel & Entertainment expense", "amount": 34336.11, "user": "afarrell", "flags": ["Outlier (z=2.9)"], "risk_score": 35}, {"entry_id": "JE202500423", "date": "2025-06-17", "posted_ts": "2025-06-17 12:50:00", "account": "6000", "account_name": "Salaries & Wages", "department": "G&A", "description": "Payroll run", "amount": 216662.16, "user": "SYSTEM", "flags": ["Outlier (z=2.9)"], "risk_score": 35}, {"entry_id": "JE202500463", "date": "2025-07-16", "posted_ts": "2025-07-16 09:20:00", "account": "4900", "account_name": "Sales Returns & Allowances", "department": "Sales", "description": "Customer refund / allowance", "amount": 29205.2, "user": "kkim", "flags": ["Outlier (z=2.6)"], "risk_score": 35}, {"entry_id": "JE202500869", "date": "2025-12-23", "posted_ts": "2025-12-23 16:10:00", "account": "6200", "account_name": "Rent & Facilities", "department": "G&A", "description": "Rent & Facilities expense", "amount": 61197.96, "user": "dwright", "flags": ["Outlier (z=3.5)"], "risk_score": 35}, {"entry_id": "JE202500895", "date": "2025-02-13", "posted_ts": "2025-02-13 11:00:00", "account": "6500", "account_name": "Professional Fees", "department": "G&A", "description": "Large vendor invoice", "amount": 332509.51, "user": "SYSTEM", "flags": ["Outlier (z=3.6)"], "risk_score": 35}, {"entry_id": "JE202500896", "date": "2025-12-05", "posted_ts": "2025-12-05 13:05:00", "account": "6900", "account_name": "Other Operating Expense", "department": "G&A", "description": "Large vendor invoice", "amount": 251856.89, "user": "jchen", "flags": ["Outlier (z=4.8)"], "risk_score": 35}, {"entry_id": "JE202500897", "date": "2025-10-30", "posted_ts": "2025-10-30 08:00:00", "account": "6100", "account_name": "Marketing & Advertising", "department": "Marketing", "description": "Large vendor invoice", "amount": 263817.98, "user": "afarrell", "flags": ["Outlier (z=5.3)"], "risk_score": 35}, {"entry_id": "JE202500898", "date": "2025-02-05", "posted_ts": "2025-02-05 15:15:00", "account": "6500", "account_name": "Professional Fees", "department": "G&A", "description": "Large vendor invoice", "amount": 259474.83, "user": "SYSTEM", "flags": ["Outlier (z=2.7)"], "risk_score": 35}, {"entry_id": "JE202500885", "date": "2025-10-23", "posted_ts": "2025-10-23 12:20:00", "account": "6900", "account_name": "Other Operating Expense", "department": "G&A", "description": "Consulting services", "amount": 100000.0, "user": "spatel", "flags": ["Round-dollar"], "risk_score": 25}, {"entry_id": "JE202500886", "date": "2025-03-05", "posted_ts": "2025-03-05 12:05:00", "account": "6400", "account_name": "Travel & Entertainment", "department": "Sales", "description": "Consulting services", "amount": 25000.0, "user": "kkim", "flags": ["Round-dollar"], "risk_score": 25}, {"entry_id": "JE202500887", "date": "2025-12-16", "posted_ts": "2025-12-16 11:30:00", "account": "6500", "account_name": "Professional Fees", "department": "G&A", "description": "Consulting services", "amount": 50000.0, "user": "jchen", "flags": ["Round-dollar"], "risk_score": 25}, {"entry_id": "JE202500888", "date": "2025-01-06", "posted_ts": "2025-01-06 09:20:00", "account": "6500", "account_name": "Professional Fees", "department": "G&A", "description": "Consulting services", "amount": 100000.0, "user": "afarrell", "flags": ["Round-dollar"], "risk_score": 25}, {"entry_id": "JE202500889", "date": "2025-12-01", "posted_ts": "2025-12-01 11:05:00", "account": "6500", "account_name": "Professional Fees", "department": "G&A", "description": "Consulting services", "amount": 75000.0, "user": "kkim", "flags": ["Round-dollar"], "risk_score": 25}]}, "recon": {"erp_lines": 565, "bank_lines": 528, "counts": {"matched": 412, "timing": 67, "amount": 42, "missing_in_bank": 44, "bank_only": 7}, "match_rate_pct": 72.9, "auto_cleared_pct": 84.8, "break_count": 160, "exposure": {"erp_total": 966811.97, "bank_total": 999087.36, "book_to_bank_gap": -32275.39, "amount_diff_total": -371.75, "in_transit_total": -33700.67, "bank_only_total": -1053.53}, "breaks": [{"type": "timing", "erp_ref": "ERP00562", "bank_ref": "BNK00518", "amount": -332509.51, "erp_date": "2025-02-13", "bank_date": "2025-02-16", "diff": 0.0, "days": 3, "memo": "Large vendor invoice"}, {"type": "amount", "erp_ref": "ERP00564", "bank_ref": "BNK00520", "amount": -263817.98, "bank_amount": -263830.23, "erp_date": "2025-10-30", "bank_date": "2025-10-30", "diff": -12.25, "memo": "Large vendor invoice"}, {"type": "timing", "erp_ref": "ERP00177", "bank_ref": "BNK00168", "amount": -207378.63, "erp_date": "2025-04-11", "bank_date": "2025-04-15", "diff": 0.0, "days": 4, "memo": "Payroll"}, {"type": "timing", "erp_ref": "ERP00255", "bank_ref": "BNK00238", "amount": -161918.59, "erp_date": "2025-06-24", "bank_date": "2025-06-28", "diff": 0.0, "days": 4, "memo": "Supplier payment - inventory"}, {"type": "timing", "erp_ref": "ERP00257", "bank_ref": "BNK00240", "amount": -159469.01, "erp_date": "2025-06-16", "bank_date": "2025-06-20", "diff": 0.0, "days": 4, "memo": "Supplier payment - inventory"}, {"type": "missing_in_bank", "erp_ref": "ERP00217", "bank_ref": null, "amount": -159373.96, "erp_date": "2025-05-12", "bank_date": null, "diff": null, "memo": "Supplier payment - inventory"}, {"type": "timing", "erp_ref": "ERP00034", "bank_ref": "BNK00033", "amount": -154843.4, "erp_date": "2025-01-14", "bank_date": "2025-01-18", "diff": 0.0, "days": 4, "memo": "Payroll"}, {"type": "timing", "erp_ref": "ERP00232", "bank_ref": "BNK00218", "amount": 139700.98, "erp_date": "2025-06-27", "bank_date": "2025-06-29", "diff": 0.0, "days": 2, "memo": "Customer payment - product"}, {"type": "missing_in_bank", "erp_ref": "ERP00236", "bank_ref": null, "amount": 137871.49, "erp_date": "2025-06-03", "bank_date": null, "diff": null, "memo": "Customer payment - product"}, {"type": "timing", "erp_ref": "ERP00283", "bank_ref": "BNK00266", "amount": 128562.88, "erp_date": "2025-07-10", "bank_date": "2025-07-11", "diff": 0.0, "days": 1, "memo": "Customer payment - product"}, {"type": "missing_in_bank", "erp_ref": "ERP00148", "bank_ref": null, "amount": 121334.73, "erp_date": "2025-04-25", "bank_date": null, "diff": null, "memo": "Customer payment - product"}, {"type": "amount", "erp_ref": "ERP00324", "bank_ref": "BNK00304", "amount": 118179.39, "bank_amount": 118154.39, "erp_date": "2025-08-05", "bank_date": "2025-08-05", "diff": -25.0, "memo": "Customer payment - product"}, {"type": "missing_in_bank", "erp_ref": "ERP00219", "bank_ref": null, "amount": -115714.14, "erp_date": "2025-05-26", "bank_date": null, "diff": null, "memo": "Payroll"}, {"type": "timing", "erp_ref": "ERP00535", "bank_ref": "BNK00493", "amount": -115657.94, "erp_date": "2025-12-30", "bank_date": "2025-12-31", "diff": 0.0, "days": 1, "memo": "Supplier payment - inventory"}, {"type": "amount", "erp_ref": "ERP00193", "bank_ref": "BNK00183", "amount": 114195.92, "bank_amount": 114198.92, "erp_date": "2025-05-16", "bank_date": "2025-05-16", "diff": 3.0, "memo": "Customer payment - product"}, {"type": "missing_in_bank", "erp_ref": "ERP00241", "bank_ref": null, "amount": 112468.13, "erp_date": "2025-06-02", "bank_date": null, "diff": null, "memo": "Customer payment - product"}, {"type": "timing", "erp_ref": "ERP00278", "bank_ref": "BNK00261", "amount": 111713.36, "erp_date": "2025-07-18", "bank_date": "2025-07-19", "diff": 0.0, "days": 1, "memo": "Customer payment - product"}, {"type": "amount", "erp_ref": "ERP00221", "bank_ref": "BNK00208", "amount": -111524.08, "bank_amount": -111536.33, "erp_date": "2025-05-16", "bank_date": "2025-05-16", "diff": -12.25, "memo": "Payroll"}, {"type": "missing_in_bank", "erp_ref": "ERP00485", "bank_ref": null, "amount": -108485.14, "erp_date": "2025-11-26", "bank_date": null, "diff": null, "memo": "Supplier payment - inventory"}, {"type": "amount", "erp_ref": "ERP00519", "bank_ref": "BNK00478", "amount": 102920.27, "bank_amount": 102895.27, "erp_date": "2025-12-09", "bank_date": "2025-12-09", "diff": -25.0, "memo": "Customer payment - product"}, {"type": "timing", "erp_ref": "ERP00158", "bank_ref": "BNK00149", "amount": 101867.15, "erp_date": "2025-04-28", "bank_date": "2025-05-02", "diff": 0.0, "days": 4, "memo": "Customer payment - product"}, {"type": "missing_in_bank", "erp_ref": "ERP00468", "bank_ref": null, "amount": 99376.82, "erp_date": "2025-11-25", "bank_date": null, "diff": null, "memo": "Customer payment - product"}, {"type": "timing", "erp_ref": "ERP00378", "bank_ref": "BNK00353", "amount": 98573.84, "erp_date": "2025-09-23", "bank_date": "2025-09-27", "diff": 0.0, "days": 4, "memo": "Customer payment - product"}, {"type": "missing_in_bank", "erp_ref": "ERP00197", "bank_ref": null, "amount": 98249.49, "erp_date": "2025-05-05", "bank_date": null, "diff": null, "memo": "Customer payment - product"}, {"type": "missing_in_bank", "erp_ref": "ERP00426", "bank_ref": null, "amount": 97458.69, "erp_date": "2025-10-22", "bank_date": null, "diff": null, "memo": "Customer payment - product"}, {"type": "missing_in_bank", "erp_ref": "ERP00394", "bank_ref": null, "amount": -96296.51, "erp_date": "2025-09-25", "bank_date": null, "diff": null, "memo": "Supplier payment - inventory"}, {"type": "timing", "erp_ref": "ERP00281", "bank_ref": "BNK00264", "amount": 96238.13, "erp_date": "2025-07-07", "bank_date": "2025-07-10", "diff": 0.0, "days": 3, "memo": "Customer payment - product"}, {"type": "missing_in_bank", "erp_ref": "ERP00346", "bank_ref": null, "amount": -95862.93, "erp_date": "2025-08-27", "bank_date": null, "diff": null, "memo": "Payroll"}, {"type": "amount", "erp_ref": "ERP00112", "bank_ref": "BNK00107", "amount": 94874.17, "bank_amount": 94861.92, "erp_date": "2025-03-28", "bank_date": "2025-03-28", "diff": -12.25, "memo": "Customer payment - product"}, {"type": "amount", "erp_ref": "ERP00173", "bank_ref": "BNK00164", "amount": -94797.83, "bank_amount": -94810.08, "erp_date": "2025-04-21", "bank_date": "2025-04-21", "diff": -12.25, "memo": "Supplier payment - inventory"}, {"type": "amount", "erp_ref": "ERP00124", "bank_ref": "BNK00118", "amount": -94097.28, "bank_amount": -94109.53, "erp_date": "2025-03-12", "bank_date": "2025-03-12", "diff": -12.25, "memo": "Supplier payment - inventory"}, {"type": "amount", "erp_ref": "ERP00400", "bank_ref": "BNK00372", "amount": -93525.96, "bank_amount": -93550.96, "erp_date": "2025-09-25", "bank_date": "2025-09-25", "diff": -25.0, "memo": "Payroll"}, {"type": "timing", "erp_ref": "ERP00191", "bank_ref": "BNK00181", "amount": 91535.72, "erp_date": "2025-05-19", "bank_date": "2025-05-20", "diff": 0.0, "days": 1, "memo": "Customer payment - product"}, {"type": "missing_in_bank", "erp_ref": "ERP00392", "bank_ref": null, "amount": -90627.11, "erp_date": "2025-09-16", "bank_date": null, "diff": null, "memo": "Supplier payment - inventory"}, {"type": "timing", "erp_ref": "ERP00366", "bank_ref": "BNK00341", "amount": 89873.87, "erp_date": "2025-09-11", "bank_date": "2025-09-14", "diff": 0.0, "days": 3, "memo": "Customer payment - product"}, {"type": "timing", "erp_ref": "ERP00461", "bank_ref": "BNK00426", "amount": 89153.48, "erp_date": "2025-11-07", "bank_date": "2025-11-09", "diff": 0.0, "days": 2, "memo": "Customer payment - product"}, {"type": "amount", "erp_ref": "ERP00300", "bank_ref": "BNK00282", "amount": -88929.2, "bank_amount": -88930.7, "erp_date": "2025-07-24", "bank_date": "2025-07-24", "diff": -1.5, "memo": "Supplier payment - inventory"}, {"type": "amount", "erp_ref": "ERP00271", "bank_ref": "BNK00254", "amount": 88673.78, "bank_amount": 88669.78, "erp_date": "2025-07-24", "bank_date": "2025-07-24", "diff": -4.0, "memo": "Customer payment - product"}, {"type": "timing", "erp_ref": "ERP00122", "bank_ref": "BNK00116", "amount": -87121.85, "erp_date": "2025-03-05", "bank_date": "2025-03-08", "diff": 0.0, "days": 3, "memo": "Supplier payment - inventory"}, {"type": "timing", "erp_ref": "ERP00084", "bank_ref": "BNK00079", "amount": -87073.12, "erp_date": "2025-02-06", "bank_date": "2025-02-08", "diff": 0.0, "days": 2, "memo": "Payroll"}, {"type": "timing", "erp_ref": "ERP00275", "bank_ref": "BNK00258", "amount": 87057.03, "erp_date": "2025-07-09", "bank_date": "2025-07-11", "diff": 0.0, "days": 2, "memo": "Customer payment - product"}, {"type": "timing", "erp_ref": "ERP00192", "bank_ref": "BNK00182", "amount": 84967.57, "erp_date": "2025-05-01", "bank_date": "2025-05-02", "diff": 0.0, "days": 1, "memo": "Customer payment - product"}, {"type": "amount", "erp_ref": "ERP00203", "bank_ref": "BNK00192", "amount": 84669.24, "bank_amount": 84672.24, "erp_date": "2025-05-21", "bank_date": "2025-05-21", "diff": 3.0, "memo": "Customer payment - product"}, {"type": "missing_in_bank", "erp_ref": "ERP00543", "bank_ref": null, "amount": -84186.64, "erp_date": "2025-12-01", "bank_date": null, "diff": null, "memo": "Marketing & Advertising"}, {"type": "timing", "erp_ref": "ERP00539", "bank_ref": "BNK00497", "amount": -83875.02, "erp_date": "2025-12-04", "bank_date": "2025-12-05", "diff": 0.0, "days": 1, "memo": "Payroll"}, {"type": "amount", "erp_ref": "ERP00128", "bank_ref": "BNK00122", "amount": -83541.87, "bank_amount": -83543.37, "erp_date": "2025-03-20", "bank_date": "2025-03-20", "diff": -1.5, "memo": "Payroll"}, {"type": "timing", "erp_ref": "ERP00486", "bank_ref": "BNK00447", "amount": -83219.73, "erp_date": "2025-11-21", "bank_date": "2025-11-23", "diff": 0.0, "days": 2, "memo": "Payroll"}, {"type": "timing", "erp_ref": "ERP00154", "bank_ref": "BNK00145", "amount": 82108.48, "erp_date": "2025-04-11", "bank_date": "2025-04-15", "diff": 0.0, "days": 4, "memo": "Customer payment - product"}, {"type": "timing", "erp_ref": "ERP00374", "bank_ref": "BNK00349", "amount": 81820.22, "erp_date": "2025-09-22", "bank_date": "2025-09-26", "diff": 0.0, "days": 4, "memo": "Customer payment - product"}, {"type": "amount", "erp_ref": "ERP00237", "bank_ref": "BNK00222", "amount": 79951.82, "bank_amount": 79954.82, "erp_date": "2025-06-23", "bank_date": "2025-06-23", "diff": 3.0, "memo": "Customer payment - product"}]}};
+/*DATA_END*/
+
+const fmt = n => (n<0?'-':'')+'$'+Math.abs(Math.round(n)).toLocaleString();
+const fmtK = n => { const a=Math.abs(n); const s=n<0?'-':'';
+  if(a>=1e6) return s+'$'+(a/1e6).toFixed(1)+'M';
+  if(a>=1e3) return s+'$'+(a/1e3).toFixed(0)+'K'; return s+'$'+a.toFixed(0); };
+const pct = n => (n>=0?'+':'')+n.toFixed(1)+'%';
+
+const C={navy:'#0f2742',accent:'#2f80ed',teal:'#1aa098',good:'#1a9c6b',bad:'#d2483f',
+  warn:'#e0883a',gold:'#c8b53a',purple:'#5b3aa0',grid:'#e8edf2',muted:'#6b7a8d'};
+Chart.defaults.font.family='-apple-system,Segoe UI,Roboto,sans-serif';
+Chart.defaults.font.size=11.5; Chart.defaults.color=C.muted;
+
+function kpi(label,val,delta,good){
+  return `<div class="kpi"><div class="label">${label}</div><div class="val">${val}</div>`+
+    (delta!==undefined?`<div class="delta ${good?'good':'bad'}">${delta}</div>`:'')+`</div>`;
+}
+
+function render(D){
+  document.getElementById('co').textContent = D.company+' — Finance Analytics Platform';
+  document.getElementById('meta').innerHTML =
+    `FY${D.fiscal_year} &nbsp;|&nbsp; refreshed ${D.generated}`;
+  document.getElementById('ft-co').textContent=D.company;
+  document.getElementById('ft-fy').textContent=D.fiscal_year;
+
+  /* ---------- FP&A ---------- */
+  const v=D.variance, s=v.summary;
+  const oiVar=s.operating_income.actual-s.operating_income.budget;
+  document.getElementById('fpa-kpis').innerHTML =
+    kpi('Net Revenue', fmtK(s.net_revenue.actual),
+        pct((s.net_revenue.actual/s.net_revenue.budget-1)*100)+' vs budget',
+        s.net_revenue.actual>=s.net_revenue.budget) +
+    kpi('Gross Margin', s.gross_margin_pct+'%',
+        'GP '+fmtK(s.gross_profit.actual), s.gross_profit.actual>=s.gross_profit.budget) +
+    kpi('Operating Income', fmtK(s.operating_income.actual),
+        fmtK(oiVar)+' vs budget', oiVar>=0) +
+    kpi('Operating Margin', s.operating_margin_pct+'%',
+        'Opex '+fmtK(s.opex.actual), s.opex.actual<=s.opex.budget);
+
+  const months=v.monthly.map(m=>m.month.slice(5));
+  const fcLabels=v.forecast.map(f=>f.month.slice(5));
+  const allLabels=months.concat(fcLabels);
+  const nrev=v.monthly.map(m=>m.net_revenue);
+  const fc=v.forecast.map(f=>f.net_revenue_forecast);
+  const fcLine=new Array(months.length-1).fill(null).concat([nrev[nrev.length-1]]).concat(fc);
+  new Chart(trendChart,{type:'line',data:{labels:allLabels,datasets:[
+    {label:'Net Revenue',data:nrev,borderColor:C.accent,backgroundColor:'rgba(47,128,237,.08)',fill:true,tension:.3,pointRadius:2},
+    {label:'Gross Profit',data:v.monthly.map(m=>m.gross_profit),borderColor:C.teal,tension:.3,pointRadius:2},
+    {label:'Operating Income',data:v.monthly.map(m=>m.operating_income),borderColor:C.gold,tension:.3,pointRadius:2},
+    {label:'Forecast',data:fcLine,borderColor:C.accent,borderDash:[6,4],pointRadius:2,tension:.3}
+  ]},options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom'}},
+    scales:{y:{ticks:{callback:v=>fmtK(v)},grid:{color:C.grid}},x:{grid:{display:false}}}}});
+
+  const tv=v.top_variances;
+  new Chart(varChart,{type:'bar',data:{labels:tv.map(t=>t.account_name),datasets:[
+    {label:'Actual',data:tv.map(t=>t.actual),backgroundColor:C.navy},
+    {label:'Budget',data:tv.map(t=>t.budget),backgroundColor:'#b9c6d6'}
+  ]},options:{maintainAspectRatio:false,indexAxis:'y',plugins:{legend:{position:'bottom'}},
+    scales:{x:{ticks:{callback:v=>fmtK(v)},grid:{color:C.grid}},y:{grid:{display:false}}}}});
+
+  const plb=document.querySelector('#plTable tbody');
+  plb.innerHTML=v.pl_lines.map(l=>{
+    const vc=l.variance>=0?'pos':'neg';
+    return `<tr><td>${l.account_name}</td><td>${fmt(l.actual)}</td><td>${fmt(l.budget)}</td>
+      <td class="${vc}">${fmt(l.variance)}</td><td class="${vc}">${pct(l.variance_pct)}</td>
+      <td><span class="pill ${l.favorable?'fav':'unfav'}">${l.favorable?'Favorable':'Unfavorable'}</span></td></tr>`;
+  }).join('');
+
+  /* ---------- Anomaly ---------- */
+  const a=D.anomaly;
+  document.getElementById('an-kpis').innerHTML =
+    kpi('Entries Scanned', a.total_entries.toLocaleString()) +
+    kpi('Flagged', a.flagged_count, a.flag_rate_pct+'% of population', false) +
+    kpi('High Risk', a.risk_band['High (>=70)'], 'score ≥ 70', false) +
+    kpi('Detection Rules', '4', 'duplicate · round · off-hours · outlier', true);
+
+  const ft=a.by_type;
+  new Chart(flagChart,{type:'bar',data:{labels:Object.keys(ft),
+    datasets:[{data:Object.values(ft),backgroundColor:[C.bad,C.warn,C.gold,C.purple,C.accent]}]},
+    options:{maintainAspectRatio:false,plugins:{legend:{display:false}},
+    scales:{y:{beginAtZero:true,grid:{color:C.grid}},x:{grid:{display:false}}}}});
+
+  const rb=a.risk_band;
+  new Chart(riskChart,{type:'doughnut',data:{labels:Object.keys(rb),
+    datasets:[{data:Object.values(rb),backgroundColor:[C.bad,C.warn,C.gold]}]},
+    options:{maintainAspectRatio:false,cutout:'58%',plugins:{legend:{position:'right'}}}});
+
+  const scoreColor=s=>s>=70?'#d2483f':s>=40?'#e0883a':'#c8b53a';
+  document.querySelector('#anTable tbody').innerHTML=a.flagged.map(f=>
+    `<tr><td><span class="score" style="background:${scoreColor(f.risk_score)}">${f.risk_score}</span></td>
+     <td>${f.entry_id}</td><td>${f.date}</td><td>${f.account_name}</td>
+     <td>${fmt(f.amount)}</td><td>${f.user}</td>
+     <td style="text-align:left">${f.flags.map(x=>`<span class="tag">${x}</span>`).join('')}</td></tr>`
+  ).join('');
+
+  /* ---------- Recon ---------- */
+  const r=D.recon, cc=r.counts;
+  document.getElementById('rc-kpis').innerHTML =
+    kpi('Auto-Cleared', r.auto_cleared_pct+'%', 'exact + timing matches', true) +
+    kpi('Open Breaks', r.break_count, 'require review', false) +
+    kpi('In-Transit', fmtK(r.exposure.in_transit_total), 'ERP not yet at bank', false) +
+    kpi('Book-to-Bank Gap', fmtK(r.exposure.book_to_bank_gap), 'net cash difference',
+        Math.abs(r.exposure.book_to_bank_gap)<5000);
+
+  const order=['matched','timing','amount','missing_in_bank','bank_only'];
+  const labelMap={matched:'Matched',timing:'Timing',amount:'Amount diff',
+    missing_in_bank:'Missing in bank',bank_only:'Bank only'};
+  new Chart(reconChart,{type:'doughnut',data:{
+    labels:order.map(o=>labelMap[o]),
+    datasets:[{data:order.map(o=>cc[o]||0),
+      backgroundColor:[C.good,C.warn,C.bad,C.accent,C.purple]}]},
+    options:{maintainAspectRatio:false,cutout:'58%',plugins:{legend:{position:'right'}}}});
+
+  const ex=r.exposure;
+  new Chart(expChart,{type:'bar',data:{
+    labels:['Amount diffs','In-transit','Bank-only'],
+    datasets:[{data:[ex.amount_diff_total,ex.in_transit_total,ex.bank_only_total],
+      backgroundColor:[C.bad,C.accent,C.purple]}]},
+    options:{maintainAspectRatio:false,plugins:{legend:{display:false}},
+    scales:{y:{ticks:{callback:v=>fmtK(v)},grid:{color:C.grid}},x:{grid:{display:false}}}}});
+
+  document.querySelector('#rcTable tbody').innerHTML=r.breaks.map(b=>
+    `<tr><td><span class="breaktype bt-${b.type}">${labelMap[b.type]}</span></td>
+     <td>${b.erp_ref||'—'}</td><td>${b.bank_ref||'—'}</td><td>${fmt(b.amount)}</td>
+     <td>${b.diff!=null?fmt(b.diff):'—'}</td><td>${b.erp_date||'—'}</td>
+     <td>${b.bank_date||'—'}</td><td style="text-align:left">${b.memo||''}</td></tr>`
+  ).join('');
+}
+
+/* tab switching */
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');
+  document.getElementById(b.dataset.tab).classList.add('active');
+});
+
+/* boot: use embedded data, or fall back to fetch (when served over http) */
+if(DASHBOARD_DATA){ render(DASHBOARD_DATA); }
+else{ fetch('dashboard_data.json').then(r=>r.json()).then(render)
+        .catch(()=>document.body.insertAdjacentHTML('beforeend',
+        '<p style="padding:30px;color:#d2483f">No data found. Run modules/build_dashboard

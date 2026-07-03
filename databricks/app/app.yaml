@@ -1,0 +1,22 @@
+# Databricks App configuration.
+# Deploy:  databricks apps deploy meridian-finance --source-code-path <workspace path to this folder>
+#
+# Attach a SQL Warehouse resource to the app (UI: App > Edit > Resources, or in
+# the deploy step). Give the resource the KEY "sql_warehouse" so the valueFrom
+# reference below injects its warehouse id as DATABRICKS_WAREHOUSE_ID.
+# Also grant the app's service principal USE CATALOG/SCHEMA + SELECT on the gold tables.
+
+command:
+  - streamlit
+  - run
+  - app.py
+  - --server.port=8000
+  - --server.address=0.0.0.0
+
+env:
+  - name: DATABRICKS_WAREHOUSE_ID
+    valueFrom: sql_warehouse
+  - name: APP_CATALOG
+    value: accounting_analytics
+  - name: APP_GOLD_SCHEMA
+    value: dev

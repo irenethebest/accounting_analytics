@@ -1,0 +1,19 @@
+account,account_name,type,statement,normal_balance
+1000,Cash - Operating,Asset,BS,D
+1100,Accounts Receivable,Asset,BS,D
+1200,Inventory,Asset,BS,D
+2000,Accounts Payable,Liability,BS,C
+2100,Accrued Payroll,Liability,BS,C
+3000,Retained Earnings,Equity,BS,C
+4000,Product Revenue,Revenue,PL,C
+4100,Service Revenue,Revenue,PL,C
+4900,Sales Returns & Allowances,Contra-Revenue,PL,D
+5000,Cost of Goods Sold,COGS,PL,D
+6000,Salaries & Wages,Opex,PL,D
+6100,Marketing & Advertising,Opex,PL,D
+6200,Rent & Facilities,Opex,PL,D
+6300,Software & IT,Opex,PL,D
+6400,Travel & Entertainment,Opex,PL,D
+6500,Professional Fees,Opex,PL,D
+6600,Depreciation,Opex,PL,D
+6900,Other Operating Expense,Opex,PL,D

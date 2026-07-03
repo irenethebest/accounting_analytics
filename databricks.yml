@@ -1,0 +1,143 @@
+# Declarative Automation Bundles (previously Databricks Asset Bundle)
+# =======================
+# Pipeline as code: a multi-task Workflow Job (ingest -> gold) deployed per
+# environment. One catalog, one schema per environment (dev / test / prod).
+#
+# Deploy to an environment (target):
+#   databricks bundle validate
+#   databricks bundle deploy -t dev      # writes to accounting_analytics.dev
+#   databricks bundle deploy -t test     # writes to accounting_analytics.test
+#   databricks bundle deploy -t prod     # writes to accounting_analytics.prod (schedule ON)
+#   databricks bundle run finance_pipeline -t dev
+#
+# The notebooks CREATE the catalog/schema if they don't exist (needs the right
+# privileges). Auth: `databricks configure` first, and set each target's host below.
+
+bundle:
+  name: accounting_analytics
+
+# ---- Parameters ----
+variables:
+  catalog:
+    description: Unity Catalog
+    default: accounting_analytics
+  schema:
+    description: Environment schema (overridden per target)
+    default: dev
+  notification_email:
+    description: Address for failure alerts
+    default: irenejinheechoi@gmail.com
+  warehouse_id:
+    description: SQL warehouse ID the app queries (SQL Warehouses UI, or `databricks warehouses list`)
+    default: "0f9084bee8c224a2"   
+
+# ---- Environments ----
+targets:
+  dev:
+    mode: development          
+    default: true
+    workspace:
+      host: https://dbc-746b43ac-afe7.cloud.databricks.com
+    variables:
+      schema: dev
+
+  test:
+    workspace:
+      host: https://dbc-746b43ac-afe7.cloud.databricks.com   
+    variables:
+      schema: test
+
+  prod:
+    mode: production
+    workspace:
+      host: https://dbc-746b43ac-afe7.cloud.databricks.com   
+    variables:
+      schema: prod
+    # Only prod runs on the weekly schedule:
+    resources:
+      jobs:
+        finance_pipeline:
+          schedule:
+            pause_status: UNPAUSED
+
+# ---- The pipeline ----
+resources:
+  jobs:
+    finance_pipeline:
+      name: accounting-analytics-pipeline
+      tags:
+        project: accounting_analytics
+
+      # Weekly, Mondays 06:00. PAUSED by default; the prod target turns it on.
+      schedule:
+        quartz_cron_expression: "0 0 6 ? * MON"
+        timezone_id: America/New_York
+        pause_status: PAUSED
+
+      email_notifications:
+        on_failure:
+          - ${var.notification_email}
+
+      tasks:
+        # Task 1 — generate synthetic data -> bronze tables in <catalog>.<schema>
+        - task_key: ingest_bronze
+          notebook_task:
+            notebook_path: ./databricks/01_ingest_bronze.py
+            base_parameters:
+              catalog: ${var.catalog}
+              schema: ${var.schema}
+
+        # Task 2 — analytics -> gold_* tables in the SAME schema (runs after task 1)
+        - task_key: build_gold
+          depends_on:
+            - task_key: ingest_bronze
+          notebook_task:
+            notebook_path: ./databricks/02_build_gold.py
+            base_parameters:
+              catalog: ${var.catalog}
+              bronze_schema: ${var.schema}
+              gold_schema: ${var.schema}
+
+      # Compute: defaults to serverless jobs compute (no cluster config, any cloud).
+      # If serverless isn't enabled, uncomment job_clusters and add
+      # `job_cluster_key: small` to each task.
+      #
+      # job_clusters:
+      #   - job_cluster_key: small
+      #     new_cluster:
+      #       spark_version: 15.4.x-scala2.12
+      #       node_type_id: i3.xlarge          # AWS; Azure: Standard_DS3_v2 / GCP: n1-standard-4
+      #       num_workers: 1
+
+  # ---- Streamlit dashboard, one per environment ----
+  apps:
+    finance_app:
+      # Unique per environment: accounting-analytics-dev / -test / -prod
+      name: accounting-analytics-${var.schema}
+      description: FP&A variance, anomaly detection & reconciliation dashboard
+      source_code_path: ./databricks/app
+      config:
+        command:
+          - streamlit
+          - run
+          - app.py
+          - --server.port=8000
+          - --server.address=0.0.0.0
+        # These override app.yaml, so each env points at its own schema.
+        env:
+          - name: DATABRICKS_WAREHOUSE_ID
+            value: ${var.warehouse_id}
+          - name: APP_CATALOG
+            value: ${var.catalog}
+          - name: APP_GOLD_SCHEMA
+            value: ${var.schema}
+      # Binding the warehouse also grants the app's service principal CAN_USE on it.
+      resources:
+        - name: sql_warehouse
+          sql_warehouse:
+            id: ${var.warehouse_id}
+            permission: CAN_USE
+      # Let the owner see/manage the app even though CI's service principal creates it
+      permissions:
+        - level: CAN_MANAGE
+          user_name: jchoi867@gatech.edu

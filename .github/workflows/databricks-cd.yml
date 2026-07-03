@@ -1,0 +1,53 @@
+name: Databricks CD
+
+# Continuous deployment for the Asset Bundle.
+#   - Pull request            -> validate only (a check on the PR)
+#   - Push to `dev`           -> validate + deploy to the DEV target
+#   - Push to `main`          -> validate + deploy to the PROD target
+#   - Manual (workflow_dispatch) -> run on demand
+# Status shows on the commit, on the PR, and in the repo's "Actions" tab.
+
+on:
+  push:
+    branches: [dev, main]
+  pull_request:
+    branches: [dev, main]
+  workflow_dispatch:
+
+# Avoid overlapping deploys to the same branch
+concurrency:
+  group: databricks-cd-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      # Host is not a secret; credentials are (service-principal OAuth, M2M).
+      DATABRICKS_HOST: https://dbc-746b43ac-afe7.cloud.databricks.com
+      DATABRICKS_CLIENT_ID: ${{ secrets.DATABRICKS_CLIENT_ID }}
+      DATABRICKS_CLIENT_SECRET: ${{ secrets.DATABRICKS_CLIENT_SECRET }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Databricks CLI
+        uses: databricks/setup-cli@main
+
+      - name: Pick target (main -> prod, anything else -> dev)
+        id: t
+        run: echo "target=${{ github.ref_name == 'main' && 'prod' || 'dev' }}" >> "$GITHUB_OUTPUT"
+
+      - name: Validate bundle
+        run: databricks bundle validate -t ${{ steps.t.outputs.target }}
+
+      - name: Deploy bundle
+        if: github.event_name != 'pull_request'
+        run: databricks bundle deploy -t ${{ steps.t.outputs.target }}
+
+      # Optional: trigger a run after deploy (uncomment to enable).
+      # Note: this uses compute every push. Leave off if you only want the
+      # weekly schedule (prod) to run it.
+      # - name: Run pipeline
+      #   if: github.event_name != 'pull_request'
+      #   run: databricks bundle run finance_pipeline -t ${{ steps.t.outputs.target }}

@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs / temp
+*.log
+*.tmp
+
+# Databricks
+.databricks/
+
+# --- Secrets / credentials: NEVER commit these ---
+.databrickscfg
+.databricks-cfg
+*.env
+.env
+.env.*
+secrets.*
+*.secret
+*.pem
+*.key
+*.p12
+*.pfx
+credentials.json
+service-account*.json
+*token*.txt
+auth.toml
+
+# Keep generated sample data and the embedded dashboard so the repo runs
+# out of the box; ignore only the validation ground-truth artifacts.
+data/_anomaly_truth.json
+data/_recon_truth.json

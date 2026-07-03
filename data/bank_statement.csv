@@ -1,0 +1,529 @@
+bank_ref,date,amount,description
+BNK00019,2025-01-01,21881.02,Customer payment - service
+BNK00021,2025-01-03,43267.0,Customer payment - service
+BNK00027,2025-01-03,-15634.78,Customer refund
+BNK00020,2025-01-03,26079.44,Customer payment - service
+BNK00006,2025-01-03,38626.36,Customer payment - product
+BNK00005,2025-01-06,54628.89,Customer payment - product
+BNK00036,2025-01-06,-39000.25,Marketing & Advertising
+BNK00511,2025-01-06,-100000.0,Consulting services
+BNK00023,2025-01-07,41865.52,Customer payment - service
+BNK00010,2025-01-07,38730.61,Customer payment - product
+BNK00043,2025-01-07,-29173.41,Professional Fees
+BNK00003,2025-01-08,33095.88,Customer payment - product
+BNK00008,2025-01-09,33332.42,Customer payment - product
+BNK00039,2025-01-09,-37074.01,Software & IT
+BNK00041,2025-01-09,-6126.07,Travel & Entertainment
+BNK00013,2025-01-10,50813.64,Customer payment - product
+BNK00045,2025-01-10,-7369.19,Other Operating Expense
+BNK00026,2025-01-14,-11787.75,Customer refund
+BNK00037,2025-01-14,-35947.59,Marketing & Advertising
+BNK00024,2025-01-15,-10505.71,Customer refund
+BNK00014,2025-01-17,57311.55,Customer payment - product
+BNK00033,2025-01-18,-154843.4,Payroll
+BNK00004,2025-01-18,52767.9,Customer payment - product
+BNK00018,2025-01-19,31936.13,Customer payment - service
+BNK00030,2025-01-20,-50488.83,Supplier payment - inventory
+BNK00012,2025-01-21,33612.39,Customer payment - product
+BNK00029,2025-01-21,-55707.93,Supplier payment - inventory
+BNK00044,2025-01-22,-6277.56,Other Operating Expense
+BNK00031,2025-01-23,-151631.68,Payroll
+BNK00011,2025-01-23,58704.12,Customer payment - product
+BNK00009,2025-01-23,51759.42,Customer payment - product
+BNK00022,2025-01-24,33207.94,Customer payment - service
+BNK00001,2025-01-24,33666.84,Customer payment - product
+BNK00042,2025-01-25,-5381.2,Travel & Entertainment
+BNK00007,2025-01-27,47934.82,Customer payment - product
+BNK00028,2025-01-27,-13105.65,Customer refund
+BNK00025,2025-01-28,-13970.93,Customer refund
+BNK00040,2025-01-28,-4875.84,Travel & Entertainment
+BNK00034,2025-01-28,-37783.96,Marketing & Advertising
+BNK00002,2025-01-29,51970.65,Customer payment - product
+BNK00038,2025-01-29,-29956.3,Rent & Facilities
+BNK00016,2025-01-29,33684.22,Customer payment - product
+BNK00015,2025-01-30,47524.9,Customer payment - product
+BNK00017,2025-01-31,51421.93,Customer payment - product
+BNK00032,2025-01-31,-129981.79,Payroll
+BNK00035,2025-02-01,-27555.09,Marketing & Advertising
+BNK00078,2025-02-03,-80035.56,Payroll
+BNK00086,2025-02-03,-28184.51,Rent & Facilities
+BNK00073,2025-02-03,-58914.68,Supplier payment - inventory
+BNK00063,2025-02-04,35238.56,Customer payment - service
+BNK00069,2025-02-04,-16115.91,Customer refund
+BNK00074,2025-02-05,-56132.68,Supplier payment - inventory
+BNK00521,2025-02-05,-259474.83,Large vendor invoice
+BNK00064,2025-02-06,43686.67,Customer payment - service
+BNK00083,2025-02-06,-21214.03,Marketing & Advertising
+BNK00060,2025-02-06,75817.58,Customer payment - product
+BNK00054,2025-02-06,58042.11,Customer payment - product
+BNK00047,2025-02-06,67813.92,Customer payment - product
+BNK00088,2025-02-06,-18736.57,Software & IT
+BNK00048,2025-02-07,52031.82,Customer payment - product
+BNK00062,2025-02-07,22759.43,Customer payment - service
+BNK00093,2025-02-07,-4957.86,Other Operating Expense
+BNK00517,2025-02-08,-34384.43,Manual adjustment
+BNK00079,2025-02-08,-87073.12,Payroll
+BNK00084,2025-02-10,-26577.42,Marketing & Advertising
+BNK00080,2025-02-10,-24182.0,Marketing & Advertising
+BNK00090,2025-02-10,-28774.59,Professional Fees
+BNK00070,2025-02-10,-77799.96,Supplier payment - inventory
+BNK00046,2025-02-10,56204.63,Customer payment - product
+BNK00076,2025-02-10,-83531.0,Payroll
+BNK00055,2025-02-10,57787.01,Customer payment - product
+BNK00072,2025-02-11,-66746.28,Supplier payment - inventory
+BNK00092,2025-02-12,-4316.76,Other Operating Expense
+BNK00061,2025-02-12,23100.07,Customer payment - service
+BNK00067,2025-02-12,-15632.12,Customer refund
+BNK00051,2025-02-13,47422.62,Customer payment - product
+BNK00065,2025-02-13,41110.6,Customer payment - service
+BNK00056,2025-02-13,45055.25,Customer payment - product
+BNK00059,2025-02-13,61767.07,Customer payment - product
+BNK00089,2025-02-14,-16252.59,Travel & Entertainment
+BNK00058,2025-02-14,72989.0,Customer payment - product
+BNK00518,2025-02-16,-332509.51,Large vendor invoice
+BNK00071,2025-02-18,-67570.98,Supplier payment - inventory
+BNK00053,2025-02-18,58829.09,Customer payment - product
+BNK00057,2025-02-19,77421.71,Customer payment - product
+BNK00085,2025-02-20,-27089.21,Rent & Facilities
+BNK00077,2025-02-20,-87416.51,Payroll
+BNK00050,2025-02-20,40243.4,Customer payment - product
+BNK00082,2025-02-21,-27601.59,Marketing & Advertising
+BNK00068,2025-02-23,-6934.16,Customer refund
+BNK00087,2025-02-25,-19347.69,Software & IT
+BNK00075,2025-02-26,-88194.4,Payroll
+BNK00049,2025-02-26,48234.7,Customer payment - product
+BNK00081,2025-02-26,-32722.8,Marketing & Advertising
+BNK00066,2025-02-27,-7335.67,Customer refund
+BNK00052,2025-02-28,76907.43,Customer payment - product
+BNK00091,2025-02-28,-5030.59,Other Operating Expense
+BNK00522,2025-03-03,-126.2,FX adjustment
+BNK00135,2025-03-03,-7806.04,Travel & Entertainment
+BNK00128,2025-03-04,-27244.23,Marketing & Advertising
+BNK00137,2025-03-05,-15346.41,Professional Fees
+BNK00127,2025-03-05,-32050.55,Marketing & Advertising
+BNK00509,2025-03-05,-25004.0,Consulting services
+BNK00133,2025-03-06,-8114.29,Travel & Entertainment
+BNK00120,2025-03-07,-77196.85,Payroll
+BNK00116,2025-03-08,-87121.85,Supplier payment - inventory
+BNK00138,2025-03-10,-6882.25,Other Operating Expense
+BNK00112,2025-03-10,-9110.18,Customer refund
+BNK00126,2025-03-11,-38126.37,Marketing & Advertising
+BNK00096,2025-03-11,68102.51,Customer payment - product
+BNK00117,2025-03-12,-75657.51,Supplier payment - inventory
+BNK00118,2025-03-12,-94109.53,Supplier payment - inventory
+BNK00136,2025-03-12,-14424.23,Professional Fees
+BNK00109,2025-03-12,49505.73,Customer payment - service
+BNK00139,2025-03-13,-6678.14,Other Operating Expense
+BNK00103,2025-03-14,57711.96,Customer payment - product
+BNK00095,2025-03-14,70739.59,Customer payment - product
+BNK00123,2025-03-14,-86114.57,Payroll
+BNK00100,2025-03-14,81246.46,Customer payment - product
+BNK00125,2025-03-15,-40836.36,Marketing & Advertising
+BNK00094,2025-03-18,72804.79,Customer payment - product
+BNK00105,2025-03-18,90043.52,Customer payment - product
+BNK00129,2025-03-18,-35678.55,Marketing & Advertising
+BNK00113,2025-03-18,-9758.97,Customer refund
+BNK00122,2025-03-20,-83543.37,Payroll
+BNK00121,2025-03-20,-78284.59,Payroll
+BNK00104,2025-03-21,57120.99,Customer payment - product
+BNK00526,2025-03-23,-218.74,Card processing fee
+BNK00108,2025-03-24,60579.31,Customer payment - service
+BNK00110,2025-03-24,52087.85,Customer payment - service
+BNK00097,2025-03-24,47817.88,Customer payment - product
+BNK00131,2025-03-25,-12264.05,Software & IT
+BNK00132,2025-03-25,-13715.94,Software & IT
+BNK00124,2025-03-25,-89114.92,Payroll
+BNK00101,2025-03-25,93839.0,Customer payment - product
+BNK00102,2025-03-26,47958.22,Customer payment - product
+BNK00111,2025-03-26,28798.14,Customer payment - service
+BNK00119,2025-03-26,-70504.51,Supplier payment - inventory
+BNK00099,2025-03-28,88492.95,Customer payment - product
+BNK00130,2025-03-28,-12612.52,Software & IT
+BNK00134,2025-03-28,-5246.27,Travel & Entertainment
+BNK00107,2025-03-28,94861.92,Customer payment - product
+BNK00114,2025-03-31,-20539.17,Customer refund
+BNK00098,2025-03-31,93961.06,Customer payment - product
+BNK00115,2025-03-31,-20134.09,Customer refund
+BNK00106,2025-03-31,60416.38,Customer payment - product
+BNK00166,2025-04-01,-95824.05,Supplier payment - inventory
+BNK00180,2025-04-02,-4990.85,Other Operating Expense
+BNK00169,2025-04-03,-76279.42,Marketing & Advertising
+BNK00160,2025-04-03,73919.01,Customer payment - service
+BNK00175,2025-04-03,-7345.55,Travel & Entertainment
+BNK00170,2025-04-07,-50945.61,Marketing & Advertising
+BNK00146,2025-04-08,101917.43,Customer payment - product
+BNK00165,2025-04-08,-107670.43,Supplier payment - inventory
+BNK00159,2025-04-09,39294.31,Customer payment - service
+BNK00148,2025-04-09,101007.19,Customer payment - product
+BNK00157,2025-04-11,58861.16,Customer payment - service
+BNK00147,2025-04-11,101758.72,Customer payment - product
+BNK00150,2025-04-11,102331.48,Customer payment - product
+BNK00174,2025-04-14,-7762.15,Travel & Entertainment
+BNK00143,2025-04-14,106065.06,Customer payment - product
+BNK00140,2025-04-14,92330.7,Customer payment - product
+BNK00176,2025-04-14,-8480.57,Travel & Entertainment
+BNK00142,2025-04-15,88370.22,Customer payment - product
+BNK00144,2025-04-15,112010.61,Customer payment - product
+BNK00168,2025-04-15,-207378.63,Payroll
+BNK00179,2025-04-15,-4866.13,Other Operating Expense
+BNK00145,2025-04-15,82108.48,Customer payment - product
+BNK00173,2025-04-16,-18982.69,Software & IT
+BNK00152,2025-04-16,76166.41,Customer payment - product
+BNK00158,2025-04-17,60000.06,Customer payment - service
+BNK00171,2025-04-18,-62641.39,Marketing & Advertising
+BNK00164,2025-04-21,-94810.08,Supplier payment - inventory
+BNK00153,2025-04-21,98838.11,Customer payment - product
+BNK00141,2025-04-22,92516.99,Customer payment - product
+BNK00178,2025-04-23,-5003.89,Other Operating Expense
+BNK00162,2025-04-23,-11694.77,Customer refund
+BNK00156,2025-04-23,48211.31,Customer payment - service
+BNK00154,2025-04-24,43682.37,Customer payment - service
+BNK00163,2025-04-24,-9718.5,Customer refund
+BNK00167,2025-04-24,-229009.47,Payroll
+BNK00172,2025-04-28,-52176.66,Rent & Facilities
+BNK00151,2025-04-29,66826.75,Customer payment - product
+BNK00177,2025-04-30,-31633.06,Professional Fees
+BNK00155,2025-04-30,56294.92,Customer payment - service
+BNK00149,2025-05-02,101867.15,Customer payment - product
+BNK00182,2025-05-02,84967.57,Customer payment - product
+BNK00161,2025-05-03,-20769.49,Customer refund
+BNK00190,2025-05-05,123866.91,Customer payment - product
+BNK00189,2025-05-06,110382.24,Customer payment - product
+BNK00210,2025-05-08,-48534.52,Marketing & Advertising
+BNK00186,2025-05-08,121099.19,Customer payment - product
+BNK00195,2025-05-08,118889.19,Customer payment - product
+BNK00204,2025-05-09,-20398.94,Customer refund
+BNK00203,2025-05-12,-21568.16,Customer refund
+BNK00202,2025-05-12,-25673.59,Customer refund
+BNK00199,2025-05-13,40322.36,Customer payment - service
+BNK00215,2025-05-13,-34336.11,Travel & Entertainment
+BNK00196,2025-05-13,38429.05,Customer payment - service
+BNK00187,2025-05-14,102351.95,Customer payment - product
+BNK00194,2025-05-14,76454.03,Customer payment - product
+BNK00201,2025-05-14,-10322.35,Customer refund
+BNK00198,2025-05-15,59916.75,Customer payment - service
+BNK00183,2025-05-16,114198.92,Customer payment - product
+BNK00193,2025-05-16,85740.48,Customer payment - product
+BNK00200,2025-05-16,-11144.62,Customer refund
+BNK00208,2025-05-16,-111536.33,Payroll
+BNK00216,2025-05-19,-26466.72,Professional Fees
+BNK00206,2025-05-19,-102024.97,Payroll
+BNK00188,2025-05-19,70573.03,Customer payment - product
+BNK00181,2025-05-20,91535.72,Customer payment - product
+BNK00192,2025-05-21,84672.24,Customer payment - product
+BNK00217,2025-05-21,-14776.56,Other Operating Expense
+BNK00213,2025-05-21,-29189.01,Rent & Facilities
+BNK00205,2025-05-22,-105340.64,Supplier payment - inventory
+BNK00211,2025-05-22,-62363.2,Marketing & Advertising
+BNK00184,2025-05-22,134788.81,Customer payment - product
+BNK00209,2025-05-23,-68428.8,Marketing & Advertising
+BNK00185,2025-05-23,125272.49,Customer payment - product
+BNK00207,2025-05-23,-102020.86,Payroll
+BNK00214,2025-05-28,-38320.59,Software & IT
+BNK00191,2025-05-29,89706.52,Customer payment - product
+BNK00212,2025-05-29,-28534.09,Rent & Facilities
+BNK00197,2025-05-30,75046.94,Customer payment - service
+BNK00230,2025-06-02,42476.76,Customer payment - service
+BNK00228,2025-06-05,60434.41,Customer payment - service
+BNK00223,2025-06-05,132940.14,Customer payment - product
+BNK00233,2025-06-05,-15567.1,Customer refund
+BNK00236,2025-06-06,-16897.64,Customer refund
+BNK00514,2025-06-07,-36214.48,Manual adjustment
+BNK00252,2025-06-09,-31327.89,Professional Fees
+BNK00220,2025-06-10,141161.61,Customer payment - product
+BNK00239,2025-06-10,-150431.17,Supplier payment - inventory
+BNK00237,2025-06-11,-153749.44,Supplier payment - inventory
+BNK00246,2025-06-13,-103388.5,Marketing & Advertising
+BNK00513,2025-06-14,-49582.8,Manual adjustment
+BNK00235,2025-06-16,-19587.11,Customer refund
+BNK00249,2025-06-16,-17792.88,Rent & Facilities
+BNK00243,2025-06-17,-216662.16,Payroll
+BNK00231,2025-06-18,57519.59,Customer payment - service
+BNK00234,2025-06-18,-16375.13,Customer refund
+BNK00253,2025-06-19,-13325.57,Other Operating Expense
+BNK00225,2025-06-19,128127.81,Customer payment - product
+BNK00240,2025-06-20,-159469.01,Supplier payment - inventory
+BNK00245,2025-06-20,-118426.55,Marketing & Advertising
+BNK00229,2025-06-20,39048.29,Customer payment - service
+BNK00222,2025-06-23,79954.82,Customer payment - product
+BNK00247,2025-06-23,-17203.45,Rent & Facilities
+BNK00227,2025-06-24,106487.14,Customer payment - product
+BNK00241,2025-06-24,-170085.15,Supplier payment - inventory
+BNK00242,2025-06-24,-106518.34,Supplier payment - inventory
+BNK00221,2025-06-24,82779.0,Customer payment - product
+BNK00219,2025-06-25,91012.82,Customer payment - product
+BNK00251,2025-06-25,-24473.26,Travel & Entertainment
+BNK00248,2025-06-25,-19009.77,Rent & Facilities
+BNK00224,2025-06-26,106439.27,Customer payment - product
+BNK00250,2025-06-26,-37998.71,Software & IT
+BNK00232,2025-06-27,87034.69,Customer payment - service
+BNK00244,2025-06-27,-190084.56,Payroll
+BNK00238,2025-06-28,-161918.59,Supplier payment - inventory
+BNK00218,2025-06-29,139700.98,Customer payment - product
+BNK00226,2025-06-30,105380.1,Customer payment - product
+BNK00525,2025-07-02,-52.99,Card processing fee
+BNK00301,2025-07-04,-4885.74,Other Operating Expense
+BNK00299,2025-07-04,-4208.81,Other Operating Expense
+BNK00273,2025-07-04,39441.92,Customer payment - service
+BNK00277,2025-07-07,-18628.99,Customer refund
+BNK00285,2025-07-07,-88740.39,Payroll
+BNK00290,2025-07-08,-59707.66,Marketing & Advertising
+BNK00300,2025-07-08,-4255.29,Other Operating Expense
+BNK00271,2025-07-08,39599.74,Customer payment - service
+BNK00284,2025-07-08,-91689.04,Payroll
+BNK00289,2025-07-09,-65306.76,Marketing & Advertising
+BNK00286,2025-07-09,-82920.83,Payroll
+BNK00281,2025-07-09,-107364.48,Supplier payment - inventory
+BNK00267,2025-07-10,128191.26,Customer payment - product
+BNK00264,2025-07-10,96238.13,Customer payment - product
+BNK00263,2025-07-10,81384.55,Customer payment - product
+BNK00262,2025-07-10,72119.89,Customer payment - product
+BNK00298,2025-07-10,-16375.73,Professional Fees
+BNK00258,2025-07-11,87057.03,Customer payment - product
+BNK00266,2025-07-11,128562.88,Customer payment - product
+BNK00260,2025-07-11,69027.04,Customer payment - product
+BNK00257,2025-07-11,73162.88,Customer payment - product
+BNK00515,2025-07-13,-53960.39,Manual adjustment
+BNK00297,2025-07-15,-21114.39,Travel & Entertainment
+BNK00269,2025-07-15,88210.6,Customer payment - product
+BNK00255,2025-07-16,129803.41,Customer payment - product
+BNK00280,2025-07-16,-123066.9,Supplier payment - inventory
+BNK00295,2025-07-16,-13679.2,Software & IT
+BNK00288,2025-07-17,-66214.73,Marketing & Advertising
+BNK00259,2025-07-17,100371.95,Customer payment - product
+BNK00276,2025-07-18,-29205.2,Customer refund
+BNK00261,2025-07-19,111713.36,Customer payment - product
+BNK00272,2025-07-21,36601.19,Customer payment - service
+BNK00291,2025-07-21,-57574.85,Marketing & Advertising
+BNK00275,2025-07-22,-18783.73,Customer refund
+BNK00274,2025-07-23,60272.34,Customer payment - service
+BNK00256,2025-07-23,116659.9,Customer payment - product
+BNK00287,2025-07-23,-82360.21,Payroll
+BNK00279,2025-07-23,-10621.32,Customer refund
+BNK00278,2025-07-24,-11653.65,Customer refund
+BNK00282,2025-07-24,-88930.7,Supplier payment - inventory
+BNK00254,2025-07-24,88669.78,Customer payment - product
+BNK00292,2025-07-27,-19629.57,Rent & Facilities
+BNK00270,2025-07-28,125135.32,Customer payment - product
+BNK00283,2025-07-28,-81104.51,Payroll
+BNK00296,2025-07-28,-12177.44,Software & IT
+BNK00294,2025-07-28,-18693.94,Rent & Facilities
+BNK00265,2025-07-28,85185.46,Customer payment - product
+BNK00293,2025-07-29,-19215.03,Rent & Facilities
+BNK00268,2025-07-30,87401.48,Customer payment - product
+BNK00330,2025-08-01,-17871.33,Rent & Facilities
+BNK00308,2025-08-01,94331.55,Customer payment - product
+BNK00317,2025-08-05,-103146.23,Supplier payment - inventory
+BNK00316,2025-08-05,-14741.6,Customer refund
+BNK00304,2025-08-05,118154.39,Customer payment - product
+BNK00328,2025-08-07,-28762.02,Marketing & Advertising
+BNK00310,2025-08-07,100014.05,Customer payment - product
+BNK00323,2025-08-08,-98426.75,Payroll
+BNK00311,2025-08-08,121859.46,Customer payment - product
+BNK00305,2025-08-08,111347.21,Customer payment - product
+BNK00326,2025-08-08,-44044.04,Marketing & Advertising
+BNK00336,2025-08-11,-6467.29,Travel & Entertainment
+BNK00318,2025-08-11,-120260.06,Supplier payment - inventory
+BNK00339,2025-08-12,-4894.53,Other Operating Expense
+BNK00307,2025-08-13,121939.98,Customer payment - product
+BNK00312,2025-08-14,43747.64,Customer payment - service
+BNK00320,2025-08-14,-105147.28,Supplier payment - inventory
+BNK00334,2025-08-15,-8835.16,Travel & Entertainment
+BNK00329,2025-08-15,-30665.77,Marketing & Advertising
+BNK00321,2025-08-15,-104236.79,Supplier payment - inventory
+BNK00333,2025-08-15,-18466.55,Software & IT
+BNK00324,2025-08-18,-116648.71,Payroll
+BNK00335,2025-08-19,-7099.53,Travel & Entertainment
+BNK00309,2025-08-19,64851.22,Customer payment - product
+BNK00338,2025-08-19,-4303.9,Other Operating Expense
+BNK00313,2025-08-19,58960.87,Customer payment - service
+BNK00322,2025-08-20,-115920.78,Payroll
+BNK00331,2025-08-20,-16285.79,Rent & Facilities
+BNK00327,2025-08-21,-35385.33,Marketing & Advertising
+BNK00332,2025-08-22,-18598.68,Software & IT
+BNK00319,2025-08-25,-83898.94,Supplier payment - inventory
+BNK00306,2025-08-25,106821.38,Customer payment - product
+BNK00325,2025-08-26,-30276.05,Marketing & Advertising
+BNK00337,2025-08-26,-5054.75,Other Operating Expense
+BNK00302,2025-08-26,84928.78,Customer payment - product
+BNK00303,2025-08-27,84906.19,Customer payment - product
+BNK00314,2025-08-28,44760.2,Customer payment - service
+BNK00524,2025-08-29,-244.54,Bank service charge
+BNK00315,2025-09-01,-9282.65,Customer refund
+BNK00373,2025-09-01,-63034.26,Marketing & Advertising
+BNK00360,2025-09-02,37536.49,Customer payment - service
+BNK00366,2025-09-02,-94488.72,Supplier payment - inventory
+BNK00351,2025-09-03,56434.85,Customer payment - product
+BNK00355,2025-09-04,72630.96,Customer payment - product
+BNK00378,2025-09-05,-18082.49,Software & IT
+BNK00354,2025-09-07,79191.16,Customer payment - product
+BNK00367,2025-09-08,-122890.13,Supplier payment - inventory
+BNK00371,2025-09-09,-80326.31,Payroll
+BNK00376,2025-09-10,-28118.9,Rent & Facilities
+BNK00350,2025-09-11,63376.27,Customer payment - product
+BNK00357,2025-09-11,45917.77,Customer payment - service
+BNK00377,2025-09-11,-21223.93,Software & IT
+BNK00380,2025-09-12,-13736.08,Travel & Entertainment
+BNK00368,2025-09-12,-87793.21,Payroll
+BNK00348,2025-09-12,93775.72,Customer payment - product
+BNK00341,2025-09-14,89873.87,Customer payment - product
+BNK00375,2025-09-15,-58769.94,Marketing & Advertising
+BNK00523,2025-09-15,-41.49,Bank service charge
+BNK00340,2025-09-16,76182.05,Customer payment - product
+BNK00343,2025-09-18,84732.08,Customer payment - product
+BNK00356,2025-09-18,52820.89,Customer payment - product
+BNK00370,2025-09-19,-83658.72,Payroll
+BNK00346,2025-09-20,59542.37,Customer payment - product
+BNK00358,2025-09-20,60943.82,Customer payment - service
+BNK00359,2025-09-22,32513.38,Customer payment - service
+BNK00363,2025-09-22,-21132.32,Customer refund
+BNK00382,2025-09-22,-10829.01,Professional Fees
+BNK00342,2025-09-22,67452.0,Customer payment - product
+BNK00379,2025-09-22,-11886.92,Travel & Entertainment
+BNK00362,2025-09-23,-14540.57,Customer refund
+BNK00374,2025-09-23,-66382.21,Marketing & Advertising
+BNK00369,2025-09-23,-91138.56,Payroll
+BNK00383,2025-09-24,-13513.75,Other Operating Expense
+BNK00344,2025-09-24,67700.3,Customer payment - product
+BNK00345,2025-09-25,68384.95,Customer payment - product
+BNK00372,2025-09-25,-93550.96,Payroll
+BNK00381,2025-09-26,-10447.16,Professional Fees
+BNK00349,2025-09-26,81820.22,Customer payment - product
+BNK00353,2025-09-27,98573.84,Customer payment - product
+BNK00364,2025-09-28,-10934.28,Customer refund
+BNK00347,2025-09-29,81205.52,Customer payment - product
+BNK00352,2025-09-29,84593.34,Customer payment - product
+BNK00365,2025-09-29,-128033.43,Supplier payment - inventory
+BNK00361,2025-09-30,55183.41,Customer payment - service
+BNK00394,2025-10-01,57756.18,Customer payment - product
+BNK00400,2025-10-03,52860.43,Customer payment - service
+BNK00387,2025-10-05,62936.27,Customer payment - product
+BNK00403,2025-10-06,-17014.07,Customer refund
+BNK00416,2025-10-06,-19177.33,Rent & Facilities
+BNK00388,2025-10-06,76256.66,Customer payment - product
+BNK00412,2025-10-07,-141855.72,Payroll
+BNK00398,2025-10-07,72206.58,Customer payment - product
+BNK00397,2025-10-07,73564.21,Customer payment - product
+BNK00411,2025-10-07,-147146.63,Payroll
+BNK00422,2025-10-08,-8168.09,Travel & Entertainment
+BNK00395,2025-10-09,69569.49,Customer payment - product
+BNK00384,2025-10-10,60257.9,Customer payment - product
+BNK00409,2025-10-10,-117636.74,Supplier payment - inventory
+BNK00418,2025-10-12,-13931.03,Software & IT
+BNK00527,2025-10-12,-126.54,Wire fee
+BNK00405,2025-10-13,-9990.97,Customer refund
+BNK00391,2025-10-13,53587.78,Customer payment - product
+BNK00424,2025-10-14,-16358.92,Professional Fees
+BNK00396,2025-10-14,47525.85,Customer payment - product
+BNK00392,2025-10-14,62165.42,Customer payment - product
+BNK00389,2025-10-14,68814.22,Customer payment - product
+BNK00419,2025-10-14,-12523.32,Software & IT
+BNK00423,2025-10-16,-6013.86,Travel & Entertainment
+BNK00406,2025-10-16,-17402.32,Customer refund
+BNK00390,2025-10-22,56711.62,Customer payment - product
+BNK00421,2025-10-22,-7307.47,Travel & Entertainment
+BNK00408,2025-10-22,-103918.43,Supplier payment - inventory
+BNK00407,2025-10-23,-75818.19,Supplier payment - inventory
+BNK00420,2025-10-23,-13763.22,Software & IT
+BNK00508,2025-10-23,-100000.0,Consulting services
+BNK00404,2025-10-24,-11236.52,Customer refund
+BNK00410,2025-10-27,-143072.66,Payroll
+BNK00399,2025-10-27,57261.77,Customer payment - service
+BNK00413,2025-10-27,-98278.37,Marketing & Advertising
+BNK00401,2025-10-28,54023.45,Customer payment - service
+BNK00386,2025-10-28,54312.08,Customer payment - product
+BNK00417,2025-10-29,-18775.74,Rent & Facilities
+BNK00393,2025-10-30,95097.49,Customer payment - product
+BNK00415,2025-10-30,-19372.67,Rent & Facilities
+BNK00520,2025-10-30,-263830.23,Large vendor invoice
+BNK00414,2025-10-31,-79274.21,Marketing & Advertising
+BNK00385,2025-10-31,76626.36,Customer payment - product
+BNK00402,2025-10-31,-13542.68,Customer refund
+BNK00446,2025-11-03,-89225.28,Supplier payment - inventory
+BNK00450,2025-11-03,-84759.51,Payroll
+BNK00457,2025-11-03,-19747.07,Rent & Facilities
+BNK00461,2025-11-04,-7259.03,Travel & Entertainment
+BNK00464,2025-11-05,-9023.66,Professional Fees
+BNK00428,2025-11-05,77671.54,Customer payment - product
+BNK00427,2025-11-06,58341.02,Customer payment - product
+BNK00459,2025-11-06,-20461.27,Software & IT
+BNK00436,2025-11-06,63387.97,Customer payment - service
+BNK00445,2025-11-06,-138364.68,Supplier payment - inventory
+BNK00451,2025-11-06,-78780.96,Payroll
+BNK00442,2025-11-07,-19991.88,Customer refund
+BNK00426,2025-11-09,89153.48,Customer payment - product
+BNK00435,2025-11-10,63720.4,Customer payment - product
+BNK00432,2025-11-10,74021.45,Customer payment - product
+BNK00439,2025-11-10,68422.21,Customer payment - service
+BNK00429,2025-11-10,80757.65,Customer payment - product
+BNK00433,2025-11-11,49792.48,Customer payment - product
+BNK00452,2025-11-11,-60310.33,Marketing & Advertising
+BNK00431,2025-11-13,94880.82,Customer payment - product
+BNK00448,2025-11-17,-83447.43,Payroll
+BNK00456,2025-11-17,-20192.1,Rent & Facilities
+BNK00430,2025-11-18,70314.9,Customer payment - product
+BNK00453,2025-11-19,-62339.17,Marketing & Advertising
+BNK00455,2025-11-19,-16305.77,Rent & Facilities
+BNK00438,2025-11-19,35940.19,Customer payment - service
+BNK00454,2025-11-19,-48609.05,Marketing & Advertising
+BNK00434,2025-11-19,77747.73,Customer payment - product
+BNK00449,2025-11-20,-85728.82,Payroll
+BNK00460,2025-11-20,-8426.78,Travel & Entertainment
+BNK00443,2025-11-21,-10718.92,Customer refund
+BNK00447,2025-11-23,-83219.73,Payroll
+BNK00444,2025-11-25,-105536.83,Supplier payment - inventory
+BNK00465,2025-11-25,-10952.73,Professional Fees
+BNK00466,2025-11-25,-6587.59,Other Operating Expense
+BNK00463,2025-11-26,-10239.55,Professional Fees
+BNK00425,2025-11-26,70348.11,Customer payment - product
+BNK00458,2025-11-27,-17497.78,Software & IT
+BNK00462,2025-11-27,-8409.82,Travel & Entertainment
+BNK00441,2025-11-27,39142.17,Customer payment - service
+BNK00437,2025-11-28,62365.78,Customer payment - service
+BNK00440,2025-11-28,66754.92,Customer payment - service
+BNK00495,2025-12-01,-84224.73,Payroll
+BNK00512,2025-12-01,-75000.0,Consulting services
+BNK00467,2025-12-01,79924.5,Customer payment - product
+BNK00479,2025-12-04,57134.73,Customer payment - product
+BNK00487,2025-12-05,-24378.3,Customer refund
+BNK00492,2025-12-05,-132360.68,Supplier payment - inventory
+BNK00497,2025-12-05,-83875.02,Payroll
+BNK00519,2025-12-05,-251856.89,Large vendor invoice
+BNK00474,2025-12-05,103576.54,Customer payment - product
+BNK00499,2025-12-05,-77825.08,Payroll
+BNK00472,2025-12-08,62617.66,Customer payment - product
+BNK00483,2025-12-08,74775.97,Customer payment - service
+BNK00469,2025-12-09,94444.19,Customer payment - product
+BNK00478,2025-12-09,102895.27,Customer payment - product
+BNK00494,2025-12-10,-109188.91,Supplier payment - inventory
+BNK00500,2025-12-10,-62906.27,Marketing & Advertising
+BNK00471,2025-12-12,84336.73,Customer payment - product
+BNK00505,2025-12-12,-25632.56,Travel & Entertainment
+BNK00504,2025-12-14,-19636.25,Software & IT
+BNK00501,2025-12-15,-85112.68,Marketing & Advertising
+BNK00475,2025-12-16,65975.82,Customer payment - product
+BNK00485,2025-12-16,78602.33,Customer payment - service
+BNK00486,2025-12-16,78704.32,Customer payment - service
+BNK00477,2025-12-17,55778.01,Customer payment - product
+BNK00476,2025-12-18,72503.97,Customer payment - product
+BNK00488,2025-12-18,-19077.24,Customer refund
+BNK00510,2025-12-19,-50000.0,Consulting services
+BNK00482,2025-12-19,77426.16,Customer payment - service
+BNK00516,2025-12-21,-35533.65,Manual adjustment
+BNK00470,2025-12-22,71970.04,Customer payment - product
+BNK00468,2025-12-23,94621.72,Customer payment - product
+BNK00502,2025-12-23,-61197.96,Rent & Facilities
+BNK00490,2025-12-23,-18721.38,Customer refund
+BNK00480,2025-12-23,87515.5,Customer payment - product
+BNK00507,2025-12-24,-6434.29,Other Operating Expense
+BNK00496,2025-12-24,-80873.99,Payroll
+BNK00498,2025-12-25,-76790.96,Payroll
+BNK00484,2025-12-25,50965.74,Customer payment - service
+BNK00491,2025-12-25,-133642.7,Supplier payment - inventory
+BNK00528,2025-12-25,-243.03,Bank service charge
+BNK00473,2025-12-26,102483.46,Customer payment - product
+BNK00506,2025-12-28,-26400.66,Professional Fees
+BNK00481,2025-12-29,50851.03,Customer payment - service
+BNK00489,2025-12-29,-26527.8,Customer refund
+BNK00503,2025-12-29,-19597.58,Software & IT
+BNK00493,2025-12-31,-115657.94,Supplier payment - inventory
