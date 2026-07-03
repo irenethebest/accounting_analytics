@@ -50,6 +50,9 @@ targets:
   prod:
     mode: production
     workspace:
+      # The CI service principal (github_ci) deploys prod; use its path so CI keeps
+      # working and admins can operate the same single deployment.
+      root_path: /Workspace/Users/4133b960-e677-44e9-a648-478029605f7d/.bundle/${bundle.name}/${bundle.target}
       host: https://dbc-746b43ac-afe7.cloud.databricks.com   
     variables:
       schema: prod
