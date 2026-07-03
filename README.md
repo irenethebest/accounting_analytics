@@ -2,6 +2,8 @@
 
 [![Databricks CD](https://github.com/irenethebest/accounting_analytics/actions/workflows/databricks-cd.yml/badge.svg)](https://github.com/irenethebest/accounting_analytics/actions/workflows/databricks-cd.yml)
 
+**Live demo:** [irenethebest.github.io/accounting_analytics](https://irenethebest.github.io/accounting_analytics/) — the full dashboard, public and always-on (a static build with the data embedded, no login required).
+
 A finance & accounting data product built from scratch on a synthetic dataset.
 It generates a coherent company's books, then runs three analytics engines over
 them and presents the results in a single, self-contained, browser-based app.
@@ -47,6 +49,32 @@ every remaining line as a break:
 
 ## Architecture
 
+```mermaid
+flowchart LR
+  G["generate_data.py<br/>synthetic GL, budget,<br/>ERP + bank ledgers"]
+  B[("Bronze Delta<br/>raw tables")]
+  GD[("Gold Delta<br/>variance · anomaly · recon")]
+  APP["Streamlit app<br/>(Databricks)"]
+  WEB["Static dashboard<br/>(GitHub Pages)"]
+  CI["GitHub Actions CI/CD<br/>Asset Bundle: dev to prod"]
+
+  G -->|01_ingest_bronze| B
+  B -->|02_build_gold| GD
+  GD --> APP
+  G -->|build_dashboard.py| WEB
+  CI -. deploys job + app .-> APP
+  CI -. deploys .-> GD
+```
+
+**How it flows:** a from-scratch Python generator produces a coherent company's
+books, which land as **bronze** Delta tables in Unity Catalog; the same analytics
+modules that power the local app compute **gold** result tables; a Streamlit
+Databricks App serves them live, while an identical static build publishes to
+GitHub Pages for public viewing. Everything ships through a GitHub Actions
+pipeline that deploys the Asset Bundle across `dev → test → prod`.
+
+### Repository layout
+
 ```
 accounting_analytics/         # git repo root
 ├── data_engine/
@@ -70,10 +98,23 @@ accounting_analytics/         # git repo root
 │   ├── 02_build_gold.py      # Run modules → gold result tables
 │   ├── app/                  # Streamlit Databricks App (SQL backend + local fallback)
 │   └── README.md             # Databricks setup & deploy guide
-├── databricks.yml            # Asset Bundle: 2-task Job, per-env (dev/test/prod), weekly schedule
+├── databricks.yml            # Asset Bundle: Job + per-env app (dev/test/prod), weekly schedule
 └── .github/workflows/
-    └── databricks-cd.yml     # CI/CD: validate + deploy on push (dev→dev, main→prod)
+    ├── databricks-cd.yml     # CI/CD: validate + deploy on push (dev→dev, main→prod)
+    └── pages.yml             # Publishes the static dashboard to GitHub Pages
 ```
+
+## Screenshots
+
+_Drop your captures into `docs/img/` (filenames below) and they'll render here._
+
+| Databricks pipeline (job DAG) | GitHub Actions CI/CD | Dashboard |
+|---|---|---|
+| ![Pipeline](docs/img/pipeline.png) | ![CI/CD](docs/img/cicd.png) | ![Dashboard](docs/img/dashboard.png) |
+
+Good captures to grab: the Workflow job's two-task graph (`ingest_bronze → build_gold`),
+a green Actions run (validate → deploy), and the running app showing the
+FP&A / Anomaly / Recon tabs.
 
 ## Two ways to run
 
