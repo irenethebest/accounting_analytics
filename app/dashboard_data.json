@@ -1,11 +1,11 @@
 {
   "company": "Jinhee Financial Co.",
   "fiscal_year": 2025,
-  "generated": "2026-07-02 19:11",
+  "generated": "2026-07-02 23:26",
   "variance": {
     "summary": {
       "net_revenue": {
-        "actual": 25608183,
+        "actual": 25314911,
         "budget": 25211250
       },
       "cogs": {
@@ -13,39 +13,39 @@
         "budget": 11454000
       },
       "gross_profit": {
-        "actual": 13819325,
+        "actual": 13526052,
         "budget": 13757250
       },
       "opex": {
-        "actual": 11468901,
-        "budget": 9630900
+        "actual": 11435183,
+        "budget": 9574914
       },
       "operating_income": {
-        "actual": 2350424,
-        "budget": 4126350
+        "actual": 2090870,
+        "budget": 4182336
       },
-      "gross_margin_pct": 54.0,
-      "operating_margin_pct": 9.2
+      "gross_margin_pct": 53.4,
+      "operating_margin_pct": 8.3
     },
     "pl_lines": [
       {
         "account": "4000",
         "account_name": "Product Revenue",
         "group": "Revenue",
-        "actual": 23309958.0,
+        "actual": 23067537.0,
         "budget": 23032500.0,
-        "variance": 277458.0,
-        "variance_pct": 1.2,
+        "variance": 35037.0,
+        "variance_pct": 0.2,
         "favorable": true
       },
       {
         "account": "4100",
         "account_name": "Service Revenue",
         "group": "Revenue",
-        "actual": 3105318.0,
+        "actual": 3054467.0,
         "budget": 2988000.0,
-        "variance": 117318.0,
-        "variance_pct": 3.9,
+        "variance": 66467.0,
+        "variance_pct": 2.2,
         "favorable": true
       },
       {
@@ -102,11 +102,11 @@
         "account": "6300",
         "account_name": "Software & IT",
         "group": "Opex",
-        "actual": 459614.0,
+        "actual": 440016.0,
         "budget": 456000.0,
-        "variance": 3614.0,
-        "variance_pct": 0.8,
-        "favorable": false
+        "variance": -15984.0,
+        "variance_pct": -3.5,
+        "favorable": true
       },
       {
         "account": "6400",
@@ -132,20 +132,20 @@
         "account": "6600",
         "account_name": "Depreciation",
         "group": "Opex",
-        "actual": 340810.0,
+        "actual": 333166.0,
         "budget": 312000.0,
-        "variance": 28810.0,
-        "variance_pct": 9.2,
+        "variance": 21166.0,
+        "variance_pct": 6.8,
         "favorable": false
       },
       {
         "account": "6900",
         "account_name": "Other Operating Expense",
         "group": "Opex",
-        "actual": 678162.0,
-        "budget": 168000.0,
-        "variance": 510162.0,
-        "variance_pct": 303.7,
+        "actual": 671685.0,
+        "budget": 112014.0,
+        "variance": 559671.0,
+        "variance_pct": 499.6,
         "favorable": false
       }
     ],
@@ -229,24 +229,24 @@
       },
       {
         "month": "2025-12",
-        "net_revenue": 2433031,
-        "gross_profit": 1315619,
-        "operating_income": 77295,
-        "gross_margin_pct": 54.1
+        "net_revenue": 2139758,
+        "gross_profit": 1022347,
+        "operating_income": -182259,
+        "gross_margin_pct": 47.8
       }
     ],
     "forecast": [
       {
         "month": "2026-01",
-        "net_revenue_forecast": 2102935
+        "net_revenue_forecast": 2005177
       },
       {
         "month": "2026-02",
-        "net_revenue_forecast": 2230033
+        "net_revenue_forecast": 2099690
       },
       {
         "month": "2026-03",
-        "net_revenue_forecast": 2255333
+        "net_revenue_forecast": 2081542
       }
     ],
     "top_variances": [
@@ -264,10 +264,10 @@
         "account": "6900",
         "account_name": "Other Operating Expense",
         "group": "Opex",
-        "actual": 678162.0,
-        "budget": 168000.0,
-        "variance": 510162.0,
-        "variance_pct": 303.7,
+        "actual": 671685.0,
+        "budget": 112014.0,
+        "variance": 559671.0,
+        "variance_pct": 499.6,
         "favorable": false
       },
       {
@@ -291,29 +291,29 @@
         "favorable": false
       },
       {
-        "account": "4000",
-        "account_name": "Product Revenue",
-        "group": "Revenue",
-        "actual": 23309958.0,
-        "budget": 23032500.0,
-        "variance": 277458.0,
-        "variance_pct": 1.2,
-        "favorable": true
-      },
-      {
         "account": "4100",
         "account_name": "Service Revenue",
         "group": "Revenue",
-        "actual": 3105318.0,
+        "actual": 3054467.0,
         "budget": 2988000.0,
-        "variance": 117318.0,
-        "variance_pct": 3.9,
+        "variance": 66467.0,
+        "variance_pct": 2.2,
+        "favorable": true
+      },
+      {
+        "account": "4000",
+        "account_name": "Product Revenue",
+        "group": "Revenue",
+        "actual": 23067537.0,
+        "budget": 23032500.0,
+        "variance": 35037.0,
+        "variance_pct": 0.2,
         "favorable": true
       }
     ]
   },
   "anomaly": {
-    "total_entries": 898,
+    "total_entries": 891,
     "flagged_count": 33,
     "flag_rate_pct": 3.7,
     "by_type": {
@@ -720,7 +720,7 @@
         "amount": 251856.89,
         "user": "jchen",
         "flags": [
-          "Outlier (z=4.8)"
+          "Outlier (z=4.7)"
         ],
         "risk_score": 35
       },
@@ -832,47 +832,65 @@
     ]
   },
   "recon": {
-    "erp_lines": 565,
-    "bank_lines": 528,
+    "erp_lines": 554,
+    "bank_lines": 518,
     "counts": {
-      "matched": 412,
-      "timing": 67,
-      "amount": 42,
-      "missing_in_bank": 44,
-      "bank_only": 7
+      "matched": 399,
+      "timing": 63,
+      "amount": 39,
+      "missing_in_bank": 53,
+      "bank_only": 17
     },
-    "match_rate_pct": 72.9,
-    "auto_cleared_pct": 84.8,
-    "break_count": 160,
+    "match_rate_pct": 72.0,
+    "auto_cleared_pct": 83.4,
+    "break_count": 172,
     "exposure": {
-      "erp_total": 966811.97,
-      "bank_total": 999087.36,
-      "book_to_bank_gap": -32275.39,
-      "amount_diff_total": -371.75,
-      "in_transit_total": -33700.67,
-      "bank_only_total": -1053.53
+      "erp_total": 2459141.43,
+      "bank_total": 1193647.8,
+      "book_to_bank_gap": 1265493.63,
+      "amount_diff_total": -354.0,
+      "in_transit_total": -228018.08,
+      "bank_only_total": -1493157.71
     },
     "breaks": [
       {
-        "type": "timing",
-        "erp_ref": "ERP00562",
+        "type": "bank_only",
+        "erp_ref": null,
         "bank_ref": "BNK00518",
         "amount": -332509.51,
-        "erp_date": "2025-02-13",
+        "erp_date": null,
         "bank_date": "2025-02-16",
-        "diff": 0.0,
-        "days": 3,
+        "diff": null,
         "memo": "Large vendor invoice"
       },
       {
-        "type": "amount",
-        "erp_ref": "ERP00564",
+        "type": "bank_only",
+        "erp_ref": null,
         "bank_ref": "BNK00520",
-        "amount": -263817.98,
-        "bank_amount": -263830.23,
-        "erp_date": "2025-10-30",
+        "amount": -263830.23,
+        "erp_date": null,
         "bank_date": "2025-10-30",
-        "diff": -12.25,
+        "diff": null,
+        "memo": "Large vendor invoice"
+      },
+      {
+        "type": "bank_only",
+        "erp_ref": null,
+        "bank_ref": "BNK00521",
+        "amount": -259474.83,
+        "erp_date": null,
+        "bank_date": "2025-02-05",
+        "diff": null,
+        "memo": "Large vendor invoice"
+      },
+      {
+        "type": "bank_only",
+        "erp_ref": null,
+        "bank_ref": "BNK00519",
+        "amount": -251856.89,
+        "erp_date": null,
+        "bank_date": "2025-12-05",
+        "diff": null,
         "memo": "Large vendor invoice"
       },
       {
@@ -951,6 +969,16 @@
         "memo": "Customer payment - product"
       },
       {
+        "type": "missing_in_bank",
+        "erp_ref": "ERP00533",
+        "bank_ref": null,
+        "amount": -133642.7,
+        "erp_date": "2025-12-25",
+        "bank_date": null,
+        "diff": null,
+        "memo": "Supplier payment - inventory"
+      },
+      {
         "type": "timing",
         "erp_ref": "ERP00283",
         "bank_ref": "BNK00266",
@@ -993,14 +1021,13 @@
         "memo": "Payroll"
       },
       {
-        "type": "timing",
+        "type": "missing_in_bank",
         "erp_ref": "ERP00535",
-        "bank_ref": "BNK00493",
+        "bank_ref": null,
         "amount": -115657.94,
         "erp_date": "2025-12-30",
-        "bank_date": "2025-12-31",
-        "diff": 0.0,
-        "days": 1,
+        "bank_date": null,
+        "diff": null,
         "memo": "Supplier payment - inventory"
       },
       {
@@ -1068,6 +1095,16 @@
         "memo": "Customer payment - product"
       },
       {
+        "type": "missing_in_bank",
+        "erp_ref": "ERP00513",
+        "bank_ref": null,
+        "amount": 102483.46,
+        "erp_date": "2025-12-26",
+        "bank_date": null,
+        "diff": null,
+        "memo": "Customer payment - product"
+      },
+      {
         "type": "timing",
         "erp_ref": "ERP00158",
         "bank_ref": "BNK00149",
@@ -1077,6 +1114,16 @@
         "diff": 0.0,
         "days": 4,
         "memo": "Customer payment - product"
+      },
+      {
+        "type": "bank_only",
+        "erp_ref": null,
+        "bank_ref": "BNK00511",
+        "amount": -100000.0,
+        "erp_date": null,
+        "bank_date": "2025-01-06",
+        "diff": null,
+        "memo": "Consulting services"
       },
       {
         "type": "missing_in_bank",
@@ -1334,61 +1381,6 @@
         "diff": 0.0,
         "days": 1,
         "memo": "Payroll"
-      },
-      {
-        "type": "amount",
-        "erp_ref": "ERP00128",
-        "bank_ref": "BNK00122",
-        "amount": -83541.87,
-        "bank_amount": -83543.37,
-        "erp_date": "2025-03-20",
-        "bank_date": "2025-03-20",
-        "diff": -1.5,
-        "memo": "Payroll"
-      },
-      {
-        "type": "timing",
-        "erp_ref": "ERP00486",
-        "bank_ref": "BNK00447",
-        "amount": -83219.73,
-        "erp_date": "2025-11-21",
-        "bank_date": "2025-11-23",
-        "diff": 0.0,
-        "days": 2,
-        "memo": "Payroll"
-      },
-      {
-        "type": "timing",
-        "erp_ref": "ERP00154",
-        "bank_ref": "BNK00145",
-        "amount": 82108.48,
-        "erp_date": "2025-04-11",
-        "bank_date": "2025-04-15",
-        "diff": 0.0,
-        "days": 4,
-        "memo": "Customer payment - product"
-      },
-      {
-        "type": "timing",
-        "erp_ref": "ERP00374",
-        "bank_ref": "BNK00349",
-        "amount": 81820.22,
-        "erp_date": "2025-09-22",
-        "bank_date": "2025-09-26",
-        "diff": 0.0,
-        "days": 4,
-        "memo": "Customer payment - product"
-      },
-      {
-        "type": "amount",
-        "erp_ref": "ERP00237",
-        "bank_ref": "BNK00222",
-        "amount": 79951.82,
-        "bank_amount": 79954.82,
-        "erp_date": "2025-06-23",
-        "bank_date": "2025-06-23",
-        "diff": 3.0,
-        "memo": "Customer payment - product"
       }
     ]
   }

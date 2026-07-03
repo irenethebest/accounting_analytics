@@ -44,24 +44,16 @@ def main():
         "recon": recon.build(erp, bank),
     }
 
-    out_json = os.path.join(APP, "dashboard_data.json")
-    with open(out_json, "w") as f:
-        json.dump(payload, f, indent=2, default=str)
+    compact = json.dumps(payload, default=str)
 
-    # Inject into index.html between the data markers, if the template exists
-    tmpl = os.path.join(APP, "index.html")
-    if os.path.exists(tmpl):
-        with open(tmpl) as f:
-            html = f.read()
-        start = "/*DATA_START*/"
-        end = "/*DATA_END*/"
-        if start in html and end in html:
-            pre = html.split(start)[0]
-            post = html.split(end)[1]
-            data_js = f"{start}\nconst DASHBOARD_DATA = {json.dumps(payload, default=str)};\n{end}"
-            with open(tmpl, "w") as f:
-                f.write(pre + data_js + post)
-            print("Injected data into app/index.html")
+    # index.html loads the data from dashboard_data.js (a <script src>), which
+    # works both locally (file://) and on GitHub Pages. We also keep a plain
+    # JSON copy for any other consumer / fetch fallback.
+    with open(os.path.join(APP, "dashboard_data.json"), "w") as f:
+        json.dump(payload, f, indent=2, default=str)
+    with open(os.path.join(APP, "dashboard_data.js"), "w") as f:
+        f.write("window.DASHBOARD_DATA = " + compact + ";\n")
+    print("Wrote dashboard_data.js and dashboard_data.json")
 
     # Console summary
     v, a, r = payload["variance"], payload["anomaly"], payload["recon"]
