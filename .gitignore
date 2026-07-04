@@ -36,7 +36,7 @@ service-account*.json
 *token*.txt
 auth.toml
 
-# Keep generated sample data and the embedded dashboard so the repo runs
-# out of the box; ignore only the validation ground-truth artifacts.
-data/_anomaly_truth.json
-data/_recon_truth.json
+# Regenerable intermediate: generate_data.py recreates data/ on demand, and the
+# Databricks pipeline generates in memory. The committed deliverable is
+# app/dashboard_data.js, so the raw CSVs don't need to be in the repo.
+data/
