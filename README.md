@@ -106,15 +106,23 @@ accounting_analytics/         # git repo root
 
 ## Screenshots
 
-_Drop your captures into `docs/img/` (filenames below) and they'll render here._
+### Dashboard
+Interactive FP&A variance, anomaly detection, and reconciliation — the live app
+(and the public [static build](https://irenethebest.github.io/accounting_analytics/)).
 
-| Databricks pipeline (job DAG) | GitHub Actions CI/CD | Dashboard |
-|---|---|---|
-| ![Pipeline](docs/img/pipeline.png) | ![CI/CD](docs/img/cicd.png) | ![Dashboard](docs/img/dashboard.png) |
+![Dashboard](docs/img/3_dashboard.png)
 
-Good captures to grab: the Workflow job's two-task graph (`ingest_bronze → build_gold`),
-a green Actions run (validate → deploy), and the running app showing the
-FP&A / Anomaly / Recon tabs.
+### Pipeline & delivery
+
+| Databricks job (DAG) | CI/CD — GitHub Actions |
+|:--:|:--:|
+| ![Pipeline](docs/img/1_pipeline.png) | ![CI/CD](docs/img/2_cicd.png) |
+| `ingest_bronze → build_gold`, running as a service principal | Validate + deploy the Asset Bundle on every push (dev → prod) |
+
+| Unity Catalog tables | Per-environment apps |
+|:--:|:--:|
+| ![Tables](docs/img/4_tables.png) | ![Apps](docs/img/5_apps.png) |
+| Bronze + gold Delta tables in `accounting_analytics` | `dev` and `prod` apps deployed from one bundle |
 
 ## Two ways to run
 
