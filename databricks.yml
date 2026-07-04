@@ -29,7 +29,16 @@ variables:
     default: irenejinheechoi@gmail.com
   warehouse_id:
     description: SQL warehouse ID the app queries (SQL Warehouses UI, or `databricks warehouses list`)
-    default: "0f9084bee8c224a2"   
+    default: "0f9084bee8c224a2"
+  email_to:
+    description: Anomaly-digest recipient(s), comma-separated
+    default: jchoi867@gatech.edu
+  email_from:
+    description: Sender address (must be a verified SendGrid sender)
+    default: jchoi867@gatech.edu
+  secret_scope:
+    description: Databricks secret scope holding the SendGrid API key
+    default: email
 
 # ---- Environments ----
 targets:
@@ -100,6 +109,19 @@ resources:
               catalog: ${var.catalog}
               bronze_schema: ${var.schema}
               gold_schema: ${var.schema}
+
+        # Task 3 — email the anomaly digest as a CSV (runs after gold is built)
+        - task_key: email_anomalies
+          depends_on:
+            - task_key: build_gold
+          notebook_task:
+            notebook_path: ./databricks/03_email_anomalies.py
+            base_parameters:
+              catalog: ${var.catalog}
+              gold_schema: ${var.schema}
+              email_to: ${var.email_to}
+              email_from: ${var.email_from}
+              secret_scope: ${var.secret_scope}
 
       # Compute: defaults to serverless jobs compute (no cluster config, any cloud).
       # If serverless isn't enabled, uncomment job_clusters and add
